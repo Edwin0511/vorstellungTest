@@ -9,18 +9,39 @@
     --gold-light:      #e8c96a;
     --gold-dark:       #a07830;
     --dark:            #0a1a0d;
+    --dark-2:          #0f2414;
+    --dark-3:          #152b1a;
     --light:           #f7f9f5;
+    --light-2:         #eef2ea;
     --gray:            #6b7280;
+    --gray-light:      #9ca3af;
     --white:           #ffffff;
-    --shadow:          0 20px 60px rgba(0,0,0,.16);
-    --shadow-sm:       0 4px 20px rgba(0,0,0,.08);
-    --shadow-gold:     0 10px 40px rgba(201,168,76,.3);
+
+    --shadow:          0 20px 60px rgba(0,0,0,.2);
+    --shadow-sm:       0 4px 20px rgba(0,0,0,.1);
+    --shadow-lg:       0 40px 80px rgba(0,0,0,.3);
+    --shadow-gold:     0 10px 40px rgba(201,168,76,.25);
     --shadow-green:    0 10px 40px rgba(26,92,46,.3);
+    --glow-gold:       0 0 30px rgba(201,168,76,.4);
+    --glow-green:      0 0 30px rgba(45,122,64,.4);
+
     --radius:          16px;
     --radius-sm:       10px;
+    --radius-lg:       24px;
+    --radius-xl:       32px;
+
     --transition:      all 0.4s cubic-bezier(0.4,0,0.2,1);
-    --font-heading:    'Playfair Display', serif;
-    --font-body:       'Inter', sans-serif;
+    --transition-fast: all 0.2s cubic-bezier(0.4,0,0.2,1);
+    --transition-slow: all 0.7s cubic-bezier(0.4,0,0.2,1);
+
+    --font-heading:    'Playfair Display', Georgia, serif;
+    --font-body:       'Inter', system-ui, sans-serif;
+
+    /* Glass effect variables */
+    --glass-bg:        rgba(255,255,255,.04);
+    --glass-border:    rgba(255,255,255,.08);
+    --glass-bg-light:  rgba(255,255,255,.7);
+    --glass-border-light: rgba(255,255,255,.9);
 }
 
 *, *::before, *::after {
@@ -48,18 +69,33 @@ img {
 
 a {
     text-decoration: none;
+    color: inherit;
 }
 
 button {
     font-family: var(--font-body);
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+address {
+    font-style: normal;
 }
 
 /* Custom scrollbar */
-::-webkit-scrollbar       { width: 5px; }
+::-webkit-scrollbar       { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--dark); }
-::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold-light); }
 
 /* Hide default cursor on pointer devices */
 @media (pointer: fine) {
     html, body, * { cursor: none !important; }
+}
+
+/* Selection */
+::selection {
+    background: var(--gold);
+    color: var(--dark);
 }

@@ -3,17 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GRÜNWERK – Garten & Landschaftsbau | Ihr Traumgarten wartet</title>
-    <meta name="description" content="Zertifizierter Meisterbetrieb für Garten- und Landschaftsbau. Gartenplanung, Terrassenbau, Pflasterarbeiten, Teichanlagen. Kostenlose Erstberatung!">
+    <title>Grünwerk – Garten & Landschaftsbau | Meisterhafte Gartengestaltung</title>
+    <meta name="description" content="Grünwerk – Ihr Premium-Partner für Gartengestaltung, Terrassenbau, Naturteiche und Pflasterarbeiten in Bayern. Über 25 Jahre Erfahrung.">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Stylesheets (order matters) -->
+    <!-- Styles -->
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/style.css">
@@ -21,695 +19,987 @@
 </head>
 <body>
 
-<!-- ══════════════ PRELOADER ══════════════ -->
+<!-- ════════════════════════════════════
+     PRELOADER
+════════════════════════════════════ -->
 <div id="preloader">
-    <div class="pl-icon"><i class="fas fa-seedling"></i></div>
-    <div class="pl-name">GRÜNWERK</div>
-    <div class="pl-sub">Garten &amp; Landschaftsbau</div>
-    <div class="pl-bar"><div class="pl-fill"></div></div>
+    <div class="preloader-inner">
+        <div class="preloader-logo">
+            <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M30 5C30 5 10 20 10 38C10 49 19 57 30 57C41 57 50 49 50 38C50 20 30 5 30 5Z" stroke="#c9a84c" stroke-width="1.5" fill="none" class="leaf-path"/>
+                <path d="M30 20C30 20 20 30 20 40" stroke="#c9a84c" stroke-width="1" fill="none" opacity="0.6"/>
+                <path d="M30 20C30 20 40 30 40 40" stroke="#c9a84c" stroke-width="1" fill="none" opacity="0.6"/>
+                <line x1="30" y1="20" x2="30" y2="57" stroke="#c9a84c" stroke-width="1.5" class="stem-line"/>
+            </svg>
+        </div>
+        <div class="preloader-text">GRÜNWERK</div>
+        <div class="preloader-bar"><div class="preloader-fill"></div></div>
+    </div>
 </div>
 
-<!-- ══════════════ CUSTOM CURSOR ══════════════ -->
+<!-- ════════════════════════════════════
+     CUSTOM CURSOR
+════════════════════════════════════ -->
 <div id="cursorDot"></div>
 <div id="cursorRing"></div>
 
-<!-- ══════════════ PROGRESS BAR ══════════════ -->
+<!-- ════════════════════════════════════
+     SCROLL PROGRESS
+════════════════════════════════════ -->
 <div id="progress-bar"></div>
 
-<!-- ══════════════ SECTION DOTS ══════════════ -->
-<nav id="sectionDots" aria-label="Seitennavigation">
-    <div class="sd-dot active" data-section="hero">
-        <span class="sd-label">Start</span>
-    </div>
-    <div class="sd-dot" data-section="leistungen">
-        <span class="sd-label">Leistungen</span>
-    </div>
-    <div class="sd-dot" data-section="ueber-uns">
-        <span class="sd-label">Über uns</span>
-    </div>
-    <div class="sd-dot" data-section="stats">
-        <span class="sd-label">Zahlen</span>
-    </div>
-    <div class="sd-dot" data-section="prozess">
-        <span class="sd-label">Prozess</span>
-    </div>
-    <div class="sd-dot" data-section="vorher-nachher">
-        <span class="sd-label">Vorher/Nachher</span>
-    </div>
-    <div class="sd-dot" data-section="portfolio">
-        <span class="sd-label">Portfolio</span>
-    </div>
-    <div class="sd-dot" data-section="referenzen">
-        <span class="sd-label">Referenzen</span>
-    </div>
-    <div class="sd-dot" data-section="kontakt">
-        <span class="sd-label">Kontakt</span>
-    </div>
+<!-- ════════════════════════════════════
+     SECTION DOTS
+════════════════════════════════════ -->
+<nav id="sectionDots" aria-label="Sektionsnavigation">
+    <button class="sd-dot" data-section="hero" aria-label="Hero"></button>
+    <button class="sd-dot" data-section="leistungen" aria-label="Leistungen"></button>
+    <button class="sd-dot" data-section="ueber-uns" aria-label="Über Uns"></button>
+    <button class="sd-dot" data-section="prozess" aria-label="Prozess"></button>
+    <button class="sd-dot" data-section="portfolio" aria-label="Portfolio"></button>
+    <button class="sd-dot" data-section="stats" aria-label="Zahlen"></button>
+    <button class="sd-dot" data-section="testimonials" aria-label="Referenzen"></button>
+    <button class="sd-dot" data-section="kontakt" aria-label="Kontakt"></button>
 </nav>
 
-<!-- ══════════════ USP STRIP ══════════════ -->
+<!-- ════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════ -->
+<header id="navbar">
+    <div class="nav-container">
+        <a href="#hero" class="nav-logo">
+            <div class="logo-icon">
+                <svg viewBox="0 0 40 40" fill="none">
+                    <path d="M20 3C20 3 6 13 6 26C6 34 12 39 20 39C28 39 34 34 34 26C34 13 20 3 20 3Z" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="20" y1="13" x2="20" y2="39" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M20 18C20 18 13 25 13 30" stroke="currentColor" stroke-width="1" opacity="0.7"/>
+                    <path d="M20 18C20 18 27 25 27 30" stroke="currentColor" stroke-width="1" opacity="0.7"/>
+                </svg>
+            </div>
+            <div class="logo-text">
+                <span class="logo-name">Grünwerk</span>
+                <span class="logo-sub">Garten &amp; Landschaftsbau</span>
+            </div>
+        </a>
+
+        <nav class="nav-links" id="navLinks">
+            <div class="nav-mobile-header">
+                <span>Grünwerk</span>
+                <button id="mobileClose" aria-label="Menü schließen">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+            </div>
+            <a href="#leistungen" class="nav-link">Leistungen</a>
+            <a href="#ueber-uns" class="nav-link">Über uns</a>
+            <a href="#portfolio" class="nav-link">Projekte</a>
+            <a href="#testimonials" class="nav-link">Referenzen</a>
+            <a href="#kontakt" class="nav-cta">Anfrage stellen</a>
+        </nav>
+
+        <button id="hamburger" class="hamburger" aria-label="Menü öffnen">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</header>
+
+<!-- ════════════════════════════════════
+     HERO
+════════════════════════════════════ -->
+<section id="hero">
+    <div id="heroBg" class="hero-bg">
+        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1920&q=85&auto=format&fit=crop" alt="Gartenlandschaft" loading="eager">
+        <div class="hero-overlay"></div>
+    </div>
+
+    <div id="particles" class="hero-particles"></div>
+
+    <div id="heroContent" class="hero-content">
+        <div class="hero-badge reveal">
+            <span class="badge-dot"></span>
+            <span>Premium Garten &amp; Landschaftsbau &middot; Seit 1998</span>
+        </div>
+
+        <h1 class="hero-headline">
+            <span class="headline-line" data-delay="0">Ihr Garten.</span>
+            <span class="headline-line headline-italic" data-delay="0.15">Unser</span>
+            <span class="headline-line headline-gold" data-delay="0.3">Meisterwerk.</span>
+        </h1>
+
+        <p class="hero-sub">
+            Meisterhafte <span id="typewriter" class="typewriter-text">Gartengestaltung</span><span class="type-cursor">|</span><br>
+            für anspruchsvolle Kunden in Bayern &amp; Österreich.
+        </p>
+
+        <div class="hero-actions">
+            <a href="#kontakt" class="btn-primary btn-magnetic">
+                <span>Projekt besprechen</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#portfolio" class="btn-outline btn-magnetic">
+                <span>Unsere Projekte</span>
+            </a>
+        </div>
+
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <strong>25+</strong>
+                <span>Jahre Erfahrung</span>
+            </div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat">
+                <strong>500+</strong>
+                <span>Projekte</span>
+            </div>
+            <div class="hero-stat-divider"></div>
+            <div class="hero-stat">
+                <strong>4,9&#9733;</strong>
+                <span>Bewertung</span>
+            </div>
+        </div>
+    </div>
+
+    <a href="#leistungen" class="scroll-indicator" aria-label="Nach unten scrollen">
+        <div class="scroll-mouse">
+            <div class="scroll-wheel"></div>
+        </div>
+        <span>Entdecken</span>
+    </a>
+</section>
+
+<!-- ════════════════════════════════════
+     MARQUEE USP STRIP
+════════════════════════════════════ -->
 <div class="usp-strip">
     <div class="usp-track">
-        <div class="usp-item"><i class="fas fa-award"></i> Zertifizierter Meisterbetrieb</div>
-        <div class="usp-item"><i class="fas fa-clock"></i> 15+ Jahre Erfahrung</div>
-        <div class="usp-item"><i class="fas fa-leaf"></i> Nachhaltige Materialien</div>
-        <div class="usp-item"><i class="fas fa-star"></i> 500+ begeisterte Kunden</div>
-        <div class="usp-item"><i class="fas fa-phone-alt"></i> Kostenlose Erstberatung</div>
-        <div class="usp-item"><i class="fas fa-shield-alt"></i> 5 Jahre Gewährleistung</div>
-        <div class="usp-item"><i class="fas fa-euro-sign"></i> Transparente Festpreise</div>
-        <div class="usp-item"><i class="fas fa-map-marker-alt"></i> Schnelle Umsetzung vor Ort</div>
-        <!-- Duplicate for seamless loop -->
-        <div class="usp-item"><i class="fas fa-award"></i> Zertifizierter Meisterbetrieb</div>
-        <div class="usp-item"><i class="fas fa-clock"></i> 15+ Jahre Erfahrung</div>
-        <div class="usp-item"><i class="fas fa-leaf"></i> Nachhaltige Materialien</div>
-        <div class="usp-item"><i class="fas fa-star"></i> 500+ begeisterte Kunden</div>
-        <div class="usp-item"><i class="fas fa-phone-alt"></i> Kostenlose Erstberatung</div>
-        <div class="usp-item"><i class="fas fa-shield-alt"></i> 5 Jahre Gewährleistung</div>
-        <div class="usp-item"><i class="fas fa-euro-sign"></i> Transparente Festpreise</div>
-        <div class="usp-item"><i class="fas fa-map-marker-alt"></i> Schnelle Umsetzung vor Ort</div>
+        <div class="usp-items">
+            <span>&#10022; Gartengestaltung</span>
+            <span>&#10022; Terrassenbauten</span>
+            <span>&#10022; Naturteiche &amp; Pools</span>
+            <span>&#10022; Pflasterarbeiten</span>
+            <span>&#10022; Baumschnitt</span>
+            <span>&#10022; Gartenbeleuchtung</span>
+            <span>&#10022; Mähroboter-Systeme</span>
+            <span>&#10022; Wintergärten</span>
+            <span>&#10022; Gartengestaltung</span>
+            <span>&#10022; Terrassenbauten</span>
+            <span>&#10022; Naturteiche &amp; Pools</span>
+            <span>&#10022; Pflasterarbeiten</span>
+            <span>&#10022; Baumschnitt</span>
+            <span>&#10022; Gartenbeleuchtung</span>
+            <span>&#10022; Mähroboter-Systeme</span>
+            <span>&#10022; Wintergärten</span>
+        </div>
     </div>
 </div>
 
-<!-- ══════════════ NAVIGATION ══════════════ -->
-<nav id="navbar">
-    <div class="nav-container">
-        <a href="#hero" class="logo">
-            <div class="logo-icon"><i class="fas fa-seedling"></i></div>
-            <div class="logo-text">
-                <h2>GRÜNWERK</h2>
-                <span>Garten &amp; Landschaftsbau</span>
-            </div>
-        </a>
-        <ul class="nav-links" id="navLinks">
-            <button class="mobile-close" id="mobileClose"><i class="fas fa-times"></i></button>
-            <li><a href="#leistungen">Leistungen</a></li>
-            <li><a href="#ueber-uns">Über uns</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#referenzen">Referenzen</a></li>
-            <li><a href="#kontakt" class="nav-cta">Jetzt anfragen</a></li>
-        </ul>
-        <div class="hamburger" id="hamburger">
-            <span></span><span></span><span></span>
-        </div>
-    </div>
-</nav>
-
-<!-- ══════════════ HERO ══════════════ -->
-<section id="hero">
-    <div class="hero-bg" id="heroBg"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-glow"></div>
-    <div class="hero-particles" id="particles"></div>
-
-    <div class="hero-content container" id="heroContent">
-        <div class="hero-badge">
-            <i class="fas fa-award"></i>
-            Zertifizierter Meisterbetrieb · Seit 2008
-        </div>
-        <h1 class="hero-title">
-            Ihr Traumgarten –<br>
-            <span class="highlight">ab sofort Realität.</span>
-        </h1>
-        <p class="hero-subtitle">
-            Meisterhaft realisierte
-            <span class="type-wrap">
-                <span id="typewriter">Gartengestaltung</span><span class="type-cursor"></span>
-            </span>
-            – nachhaltig, präzise und mit echter Leidenschaft.
-        </p>
-        <div class="hero-buttons">
-            <a href="#kontakt" class="btn-primary btn-magnetic">
-                <i class="fas fa-phone-alt"></i>
-                Kostenlose Beratung
-            </a>
-            <a href="#portfolio" class="btn-secondary btn-magnetic">
-                <i class="fas fa-images"></i>
-                Projekte entdecken
-            </a>
-        </div>
-    </div>
-
-    <div class="hero-stats">
-        <div class="hero-stat">
-            <div class="hero-stat-num">15+</div>
-            <div class="hero-stat-label">Jahre Erfahrung</div>
-        </div>
-        <div class="hero-stat">
-            <div class="hero-stat-num">500+</div>
-            <div class="hero-stat-label">Projekte</div>
-        </div>
-        <div class="hero-stat">
-            <div class="hero-stat-num">4.9★</div>
-            <div class="hero-stat-label">Bewertung</div>
-        </div>
-    </div>
-
-    <div class="scroll-indicator">
-        <div class="scroll-line"></div>
-        Entdecken
-    </div>
-</section>
-
-<!-- ══════════════ LEISTUNGEN ══════════════ -->
-<section id="leistungen">
+<!-- ════════════════════════════════════
+     LEISTUNGEN
+════════════════════════════════════ -->
+<section id="leistungen" class="section-dark">
     <div class="container">
-        <div class="services-header reveal">
-            <div class="section-tag">Was wir bieten</div>
-            <h2 class="section-title">Unsere Leistungen</h2>
-            <p class="section-subtitle">Alles aus einer Hand – von der kreativen Planung bis zur fachgerechten Ausführung. Qualität, die überzeugt und bleibt.</p>
+        <div class="section-header">
+            <span class="section-label reveal">Was wir tun</span>
+            <h2 class="section-title reveal">Unsere <em>Leistungen</em></h2>
+            <p class="section-sub reveal">Von der ersten Skizze bis zur gepflegten Anlage – wir realisieren Ihren Traumgarten mit Leidenschaft und Präzision.</p>
         </div>
+
         <div class="services-grid">
-            <div class="service-card reveal" style="transition-delay:.05s" data-category="planung">
-                <div class="card-shimmer"></div>
-                <div class="service-card-inner">
-                    <div class="service-icon"><i class="fas fa-drafting-compass"></i></div>
-                    <h3>Gartenplanung &amp; Design</h3>
-                    <p>Individuelle 3D-Planung nach Ihren Wünschen. Wir machen Ihre Ideen sichtbar – noch bevor der erste Spatenstich erfolgt.</p>
-                    <div class="service-arrow">Mehr erfahren <i class="fas fa-arrow-right"></i></div>
+
+            <div class="service-card glass-card reveal" data-delay="0">
+                <div class="service-icon">
+                    <svg viewBox="0 0 48 48" fill="none">
+                        <path d="M24 8C24 8 12 18 12 30C12 37 17 42 24 42C31 42 36 37 36 30C36 18 24 8 24 8Z" stroke="currentColor" stroke-width="1.5"/>
+                        <line x1="24" y1="18" x2="24" y2="42" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
                 </div>
-            </div>
-            <div class="service-card reveal" style="transition-delay:.12s">
-                <div class="card-shimmer"></div>
-                <div class="service-card-inner">
-                    <div class="service-icon"><i class="fas fa-home"></i></div>
-                    <h3>Terrassenbau</h3>
-                    <p>Holz, WPC, Naturstein oder Feinsteinzeug – wir bauen Ihre Terrasse als perfekte Erweiterung Ihres Wohnraums im Freien.</p>
-                    <div class="service-arrow">Mehr erfahren <i class="fas fa-arrow-right"></i></div>
+                <h3>Gartengestaltung</h3>
+                <p>Individuelle Gartenkonzepte, die Ihre Persönlichkeit widerspiegeln – von klassisch bis modern, von klein bis weitläufig.</p>
+                <div class="service-link">
+                    <span>Mehr erfahren</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </div>
+                <div class="card-glow"></div>
             </div>
-            <div class="service-card reveal" style="transition-delay:.2s">
-                <div class="card-shimmer"></div>
-                <div class="service-card-inner">
-                    <div class="service-icon"><i class="fas fa-road"></i></div>
-                    <h3>Pflasterarbeiten &amp; Wege</h3>
-                    <p>Hochwertige Pflasterflächen, Natursteinwege und Einfahrten – dauerhaft, ästhetisch und werterhöhend für Ihr Grundstück.</p>
-                    <div class="service-arrow">Mehr erfahren <i class="fas fa-arrow-right"></i></div>
+
+            <div class="service-card glass-card reveal" data-delay="0.1">
+                <div class="service-icon">
+                    <svg viewBox="0 0 48 48" fill="none">
+                        <rect x="10" y="28" width="28" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                        <rect x="16" y="18" width="16" height="12" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                        <line x1="14" y1="28" x2="14" y2="38" stroke="currentColor" stroke-width="1.5"/>
+                        <line x1="34" y1="28" x2="34" y2="38" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
                 </div>
-            </div>
-            <div class="service-card reveal" style="transition-delay:.28s">
-                <div class="card-shimmer"></div>
-                <div class="service-card-inner">
-                    <div class="service-icon"><i class="fas fa-tint"></i></div>
-                    <h3>Teich &amp; Wassergarten</h3>
-                    <p>Schwimmteiche, Biotope, Springbrunnen und Wasserläufe – wir bringen die beruhigende Kraft des Wassers in Ihren Garten.</p>
-                    <div class="service-arrow">Mehr erfahren <i class="fas fa-arrow-right"></i></div>
+                <h3>Terrassenbauten</h3>
+                <p>Naturstein, Holz oder Feinsteinzeug – wir schaffen Außenwohnräume, die begeistern und Jahrzehnte halten.</p>
+                <div class="service-link">
+                    <span>Mehr erfahren</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </div>
+                <div class="card-glow"></div>
             </div>
-            <div class="service-card reveal" style="transition-delay:.36s">
-                <div class="card-shimmer"></div>
-                <div class="service-card-inner">
-                    <div class="service-icon"><i class="fas fa-leaf"></i></div>
-                    <h3>Bepflanzung &amp; Rasen</h3>
-                    <p>Fachgerechte Bepflanzung, Rollrasen oder Saatgras – für ein sattgrünes, vitales Fundament das ganze Jahr über.</p>
-                    <div class="service-arrow">Mehr erfahren <i class="fas fa-arrow-right"></i></div>
+
+            <div class="service-card glass-card reveal" data-delay="0.2">
+                <div class="service-icon">
+                    <svg viewBox="0 0 48 48" fill="none">
+                        <ellipse cx="24" cy="30" rx="12" ry="6" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M18 28C18 28 20 20 24 16C28 20 30 28 30 28" stroke="currentColor" stroke-width="1.5"/>
+                        <circle cx="24" cy="30" r="2" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
                 </div>
-            </div>
-            <div class="service-card reveal" style="transition-delay:.44s">
-                <div class="card-shimmer"></div>
-                <div class="service-card-inner">
-                    <div class="service-icon"><i class="fas fa-sync-alt"></i></div>
-                    <h3>Gartenpflege &amp; Wartung</h3>
-                    <p>Regelmäßige Pflege, Baumschnitt, Bewässerungssysteme – wir halten Ihren Garten das ganze Jahr in perfektem Zustand.</p>
-                    <div class="service-arrow">Mehr erfahren <i class="fas fa-arrow-right"></i></div>
+                <h3>Naturteiche &amp; Pools</h3>
+                <p>Bioteiche, Naturpools und Zierbrunnen – lebendige Wasserwelten, die Ihren Garten in ein Paradies verwandeln.</p>
+                <div class="service-link">
+                    <span>Mehr erfahren</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </div>
+                <div class="card-glow"></div>
             </div>
+
+            <div class="service-card glass-card reveal" data-delay="0.3">
+                <div class="service-icon">
+                    <svg viewBox="0 0 48 48" fill="none">
+                        <rect x="10" y="32" width="28" height="4" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                        <rect x="13" y="27" width="6" height="6" stroke="currentColor" stroke-width="1.5"/>
+                        <rect x="21" y="27" width="6" height="6" stroke="currentColor" stroke-width="1.5"/>
+                        <rect x="29" y="27" width="6" height="6" stroke="currentColor" stroke-width="1.5"/>
+                        <line x1="10" y1="27" x2="38" y2="27" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                </div>
+                <h3>Pflasterarbeiten</h3>
+                <p>Einfahrten, Wege und Plätze in Naturstein, Beton oder Klinker – präzise verlegt, langlebig und ästhetisch.</p>
+                <div class="service-link">
+                    <span>Mehr erfahren</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </div>
+                <div class="card-glow"></div>
+            </div>
+
+            <div class="service-card glass-card reveal" data-delay="0.4">
+                <div class="service-icon">
+                    <svg viewBox="0 0 48 48" fill="none">
+                        <path d="M24 10V20M24 20C24 20 16 24 16 32H32C32 24 24 20 24 20Z" stroke="currentColor" stroke-width="1.5"/>
+                        <line x1="24" y1="32" x2="24" y2="38" stroke="currentColor" stroke-width="1.5"/>
+                        <line x1="16" y1="36" x2="32" y2="36" stroke="currentColor" stroke-width="1.5"/>
+                    </svg>
+                </div>
+                <h3>Baumpflege &amp; Schnitt</h3>
+                <p>Professioneller Baumschnitt, Fällungen und Pflanzungen – für gesunde Bäume und eine sichere Umgebung.</p>
+                <div class="service-link">
+                    <span>Mehr erfahren</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </div>
+                <div class="card-glow"></div>
+            </div>
+
+            <div class="service-card glass-card reveal" data-delay="0.5">
+                <div class="service-icon">
+                    <svg viewBox="0 0 48 48" fill="none">
+                        <circle cx="24" cy="24" r="5" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M24 10V14M24 34V38M10 24H14M34 24H38" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M14.93 14.93L17.76 17.76M30.24 30.24L33.07 33.07M14.93 33.07L17.76 30.24M30.24 17.76L33.07 14.93" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h3>Gartenbeleuchtung</h3>
+                <p>LED-Konzepte, Spot- und Wegebeleuchtung – Ihr Garten strahlt auch nach Sonnenuntergang in vollem Glanz.</p>
+                <div class="service-link">
+                    <span>Mehr erfahren</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </div>
+                <div class="card-glow"></div>
+            </div>
+
         </div>
     </div>
 </section>
 
-<!-- ══════════════ ÜBER UNS ══════════════ -->
-<section id="ueber-uns" style="position:relative;overflow:hidden;">
-    <!-- Decorative blobs -->
-    <div class="blob blob-green" style="width:500px;height:500px;top:-120px;right:-100px;animation:blobFloat1 14s ease infinite;"></div>
-    <div class="blob blob-gold"  style="width:350px;height:350px;bottom:-80px;left:-80px;animation:blobFloat2 11s ease infinite;"></div>
-
-    <div class="container" style="position:relative;z-index:2;">
+<!-- ════════════════════════════════════
+     ÜBER UNS
+════════════════════════════════════ -->
+<section id="ueber-uns" class="section-light">
+    <div class="container">
         <div class="about-grid">
-            <div class="about-images reveal-left">
-                <img class="about-img-main"
-                     src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80"
-                     alt="Unser Team bei der Gartenarbeit" loading="lazy">
-                <img class="about-img-secondary"
-                     src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=400&q=80"
-                     alt="Detailarbeit im Garten" loading="lazy">
-                <div class="about-badge">
-                    <div class="about-badge-icon"><i class="fas fa-medal"></i></div>
-                    <div class="about-badge-text">
-                        <h4>Meisterbetrieb</h4>
-                        <p>Zertifiziert &amp; geprüft</p>
+            <div class="about-imagery">
+                <div class="about-img-main reveal-left">
+                    <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800&q=85&auto=format&fit=crop" alt="Gartenanlage" loading="lazy">
+                    <div class="img-badge">
+                        <strong>Meisterbetrieb</strong>
+                        <span>Zertifiziert seit 1998</span>
                     </div>
                 </div>
+                <div class="about-img-secondary reveal-left" style="transition-delay:.15s">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=85&auto=format&fit=crop" alt="Garten Detail" loading="lazy">
+                </div>
+                <div class="about-blob-1"></div>
+                <div class="about-blob-2"></div>
             </div>
-            <div class="about-content reveal-right">
-                <div class="section-tag">Über uns</div>
-                <h2 class="section-title">Leidenschaft für grüne Lebensräume</h2>
-                <p>Mit über 15 Jahren Erfahrung im Garten- und Landschaftsbau sind wir Ihr verlässlicher Partner für außergewöhnliche Außenanlagen. Als zertifizierter Meisterbetrieb verbinden wir handwerkliche Perfektion mit kreativem Design und natürlichem Feingefühl.</p>
-                <p>Unser Team aus erfahrenen Garten- und Landschaftsbaumeistern, Technikern und Pflegespezialisten arbeitet mit modernsten Maschinen und sorgfältig ausgewählten Materialien – stets im Einklang mit der Natur und Ihren persönlichen Wünschen.</p>
-                <div class="about-features">
-                    <div class="about-feature">
-                        <div class="about-feature-icon"><i class="fas fa-check"></i></div>
-                        Kostenlose Erstberatung
+
+            <div class="about-content">
+                <span class="section-label reveal">Wer wir sind</span>
+                <h2 class="section-title reveal">Leidenschaft für <em>lebendige</em> Räume</h2>
+                <p class="about-lead reveal">Seit 1998 verwandeln wir Außenbereiche in grüne Lebensräume. Was als kleiner Familienbetrieb begann, ist heute ein Team aus 40 hochqualifizierten Garten- und Landschaftsbauern.</p>
+                <p class="about-text reveal">Unser Ansatz ist ganzheitlich: Wir hören zu, planen individuell und bauen mit höchstem handwerklichem Anspruch. Vom ersten Beratungsgespräch bis zur Fertigstellung sind wir Ihr verlässlicher Partner.</p>
+
+                <div class="about-features reveal">
+                    <div class="about-feat">
+                        <div class="feat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                        </div>
+                        <div>
+                            <strong>Meisterbetrieb</strong>
+                            <span>Zertifiziert und versichert</span>
+                        </div>
                     </div>
-                    <div class="about-feature">
-                        <div class="about-feature-icon"><i class="fas fa-check"></i></div>
-                        3D-Visualisierung
+                    <div class="about-feat">
+                        <div class="feat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                        </div>
+                        <div>
+                            <strong>Nachhaltige Materialien</strong>
+                            <span>Ökologisch und langlebig</span>
+                        </div>
                     </div>
-                    <div class="about-feature">
-                        <div class="about-feature-icon"><i class="fas fa-check"></i></div>
-                        Zertifizierter Meisterbetrieb
+                    <div class="about-feat">
+                        <div class="feat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                        </div>
+                        <div>
+                            <strong>Festpreisgarantie</strong>
+                            <span>Transparent und fair</span>
+                        </div>
                     </div>
-                    <div class="about-feature">
-                        <div class="about-feature-icon"><i class="fas fa-check"></i></div>
-                        5 Jahre Gewährleistung
-                    </div>
-                    <div class="about-feature">
-                        <div class="about-feature-icon"><i class="fas fa-check"></i></div>
-                        Nachhaltige Materialien
-                    </div>
-                    <div class="about-feature">
-                        <div class="about-feature-icon"><i class="fas fa-check"></i></div>
-                        Transparente Festpreise
+                    <div class="about-feat">
+                        <div class="feat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                        </div>
+                        <div>
+                            <strong>5 Jahre Gewährleistung</strong>
+                            <span>Auf alle Leistungen</span>
+                        </div>
                     </div>
                 </div>
-                <a href="#kontakt" class="btn-primary btn-magnetic" style="display:inline-flex;">
-                    <i class="fas fa-phone-alt"></i>
-                    Jetzt kostenlos beraten lassen
+
+                <a href="#kontakt" class="btn-primary btn-magnetic reveal">
+                    <span>Kennenlernen</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ══════════════ STATS ══════════════ -->
-<section id="stats">
+<!-- ════════════════════════════════════
+     PROZESS
+════════════════════════════════════ -->
+<section id="prozess" class="section-dark">
     <div class="container">
-        <div class="stats-grid">
-            <div class="stat-item reveal" style="transition-delay:.05s">
-                <div class="stat-icon"><i class="fas fa-calendar-check"></i></div>
-                <div class="stat-number"><span class="counter" data-target="15">0</span><span>+</span></div>
-                <div class="stat-label">Jahre Erfahrung</div>
-            </div>
-            <div class="stat-item reveal" style="transition-delay:.15s">
-                <div class="stat-icon"><i class="fas fa-project-diagram"></i></div>
-                <div class="stat-number"><span class="counter" data-target="500">0</span><span>+</span></div>
-                <div class="stat-label">Abgeschlossene Projekte</div>
-            </div>
-            <div class="stat-item reveal" style="transition-delay:.25s">
-                <div class="stat-icon"><i class="fas fa-smile-beam"></i></div>
-                <div class="stat-number"><span class="counter" data-target="480">0</span><span>+</span></div>
-                <div class="stat-label">Begeisterte Kunden</div>
-            </div>
-            <div class="stat-item reveal" style="transition-delay:.35s">
-                <div class="stat-icon"><i class="fas fa-users"></i></div>
-                <div class="stat-number"><span class="counter" data-target="12">0</span></div>
-                <div class="stat-label">Fachkräfte im Team</div>
-            </div>
+        <div class="section-header">
+            <span class="section-label reveal">Wie wir arbeiten</span>
+            <h2 class="section-title reveal">Ihr Weg zum <em>Traumgarten</em></h2>
+            <p class="section-sub reveal">In vier klaren Schritten von der Idee zur fertigen Anlage – transparent, professionell und termingetreu.</p>
         </div>
-    </div>
-</section>
 
-<!-- ══════════════ WARUM WIR ══════════════ -->
-<section id="warum-wir">
-    <div class="container">
-        <div class="why-header reveal">
-            <div class="section-tag">Ihr Vorteil</div>
-            <h2 class="section-title" style="color:#fff;">Warum Kunden uns vertrauen</h2>
-        </div>
-        <div class="why-grid">
-            <div class="why-item reveal" style="transition-delay:.05s">
-                <div class="why-icon"><i class="fas fa-cube"></i></div>
-                <h3>3D-Planung inklusive</h3>
-                <p>Sehen Sie Ihren Traumgarten schon vor dem ersten Spatenstich – fotorealistisch und maßgetreu visualisiert.</p>
-            </div>
-            <div class="why-item reveal" style="transition-delay:.15s">
-                <div class="why-icon"><i class="fas fa-lock"></i></div>
-                <h3>Festpreisgarantie</h3>
-                <p>Keine versteckten Kosten, keine bösen Überraschungen. Der vereinbarte Preis ist der Endpreis.</p>
-            </div>
-            <div class="why-item reveal" style="transition-delay:.25s">
-                <div class="why-icon"><i class="fas fa-bolt"></i></div>
-                <h3>Schnelle Umsetzung</h3>
-                <p>Eingespieltes Team und moderner Maschinenpark: Projekte realisieren wir schnell, sauber und termingerecht.</p>
-            </div>
-            <div class="why-item reveal" style="transition-delay:.35s">
-                <div class="why-icon"><i class="fas fa-recycle"></i></div>
-                <h3>Nachhaltig &amp; regional</h3>
-                <p>Wir setzen auf lokale Materialien und ökologische Lösungen – gut für Ihren Garten und die Umwelt.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ══════════════ PROZESS ══════════════ -->
-<section id="prozess">
-    <div class="container">
-        <div class="process-header reveal">
-            <div class="section-tag">Unser Vorgehen</div>
-            <h2 class="section-title">In 4 Schritten zum Traumgarten</h2>
-            <p class="section-subtitle">Transparent, zuverlässig und ohne unangenehme Überraschungen – so arbeiten wir für Sie.</p>
-        </div>
         <div class="process-timeline">
-            <div class="process-step reveal" style="transition-delay:.05s">
-                <div class="step-number"><span class="step-num-text">01</span></div>
-                <h3>Erstberatung</h3>
-                <p>Kostenloser Termin vor Ort. Wir hören zu, analysieren Ihr Grundstück und erfassen alle Ihre Wünsche.</p>
-            </div>
-            <div class="process-step reveal" style="transition-delay:.15s">
-                <div class="step-number"><span class="step-num-text">02</span></div>
-                <h3>3D-Planung</h3>
-                <p>Individuelle Visualisierung, detailliertes Angebot mit Festpreisgarantie und verbindlichem Zeitplan.</p>
-            </div>
-            <div class="process-step reveal" style="transition-delay:.25s">
-                <div class="step-number"><span class="step-num-text">03</span></div>
-                <h3>Ausführung</h3>
-                <p>Professionelle Umsetzung durch unser Fachteam – pünktlich, ordentlich und mit höchster Sorgfalt.</p>
-            </div>
-            <div class="process-step reveal" style="transition-delay:.35s">
-                <div class="step-number"><span class="step-num-text">04</span></div>
-                <h3>Übergabe &amp; Pflege</h3>
-                <p>Persönliche Einweisung, Übergabe-Protokoll und auf Wunsch Pflegevertrag für dauerhafte Schönheit.</p>
-            </div>
-        </div>
-    </div>
-</section>
+            <div class="process-line"></div>
 
-<!-- ══════════════ VORHER / NACHHER ══════════════ -->
-<section id="vorher-nachher">
-    <!-- Blobs -->
-    <div class="ba-blobs">
-        <div class="blob blob-gold"  style="width:400px;height:400px;top:-50px;right:-80px;animation:blobFloat2 13s ease infinite;"></div>
-        <div class="blob blob-green" style="width:350px;height:350px;bottom:-60px;left:-70px;animation:blobFloat1 10s ease infinite;"></div>
-    </div>
-
-    <div class="container" style="position:relative;z-index:2;">
-        <div class="ba-header reveal">
-            <div class="section-tag">Transformation</div>
-            <h2 class="section-title">Vorher &amp; Nachher</h2>
-            <p class="section-subtitle">Ziehen Sie den Regler und sehen Sie den Unterschied selbst.</p>
-        </div>
-
-        <div class="ba-wrap reveal">
-            <div class="ba-container">
-                <!-- After (background, full) -->
-                <img class="ba-img"
-                     src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=85"
-                     alt="Nachher: Fertig gestalteter Garten" loading="lazy">
-
-                <!-- Before (clipped overlay) -->
-                <div class="ba-before">
-                    <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&q=85"
-                         alt="Vorher: Ungepflegter Garten" loading="lazy">
-                </div>
-
-                <!-- Labels -->
-                <span class="ba-label ba-label-before">Vorher</span>
-                <span class="ba-label ba-label-after">Nachher</span>
-
-                <!-- Handle -->
-                <div class="ba-handle">
-                    <div class="ba-circle">
-                        <i class="fas fa-chevron-left"></i>
-                        <i class="fas fa-chevron-right"></i>
+            <div class="process-step reveal" data-delay="0">
+                <div class="step-number">01</div>
+                <div class="step-content glass-card">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="16" cy="16" r="12"/><path d="M16 8v8l5 3"/></svg>
                     </div>
+                    <h3>Beratung &amp; Analyse</h3>
+                    <p>Kostenloses Erstgespräch vor Ort. Wir analysieren Ihren Garten, hören Ihre Wünsche und beraten zu Möglichkeiten und Budget.</p>
                 </div>
             </div>
-            <p class="ba-hint">
-                <i class="fas fa-hand-pointer"></i>
-                Regler ziehen um Vorher/Nachher zu vergleichen
-            </p>
+
+            <div class="process-step reveal" data-delay="0.1">
+                <div class="step-number">02</div>
+                <div class="step-content glass-card">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="24" height="24" rx="2"/><line x1="4" y1="12" x2="28" y2="12"/><line x1="12" y1="12" x2="12" y2="28"/></svg>
+                    </div>
+                    <h3>Planung &amp; Konzept</h3>
+                    <p>Unser Designteam erstellt einen detaillierten Plan mit 3D-Visualisierung. Sie sehen genau, wie Ihr Garten aussehen wird.</p>
+                </div>
+            </div>
+
+            <div class="process-step reveal" data-delay="0.2">
+                <div class="step-number">03</div>
+                <div class="step-content glass-card">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 28L10 24L22 12L20 10L8 22L4 28H6Z"/><path d="M20 10L22 8L24 6L26 8L24 10L22 12L20 10Z"/></svg>
+                    </div>
+                    <h3>Ausführung</h3>
+                    <p>Unser erfahrenes Team setzt Ihr Projekt handwerklich präzise um – pünktlich, sauber und mit höchstem Qualitätsanspruch.</p>
+                </div>
+            </div>
+
+            <div class="process-step reveal" data-delay="0.3">
+                <div class="step-number">04</div>
+                <div class="step-content glass-card">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="16" cy="16" r="12"/><polyline points="10 16 14 20 22 12"/></svg>
+                    </div>
+                    <h3>Übergabe &amp; Pflege</h3>
+                    <p>Persönliche Übergabe mit Pflegehinweisen und optionalem Wartungsvertrag. Wir bleiben Ihr Partner auch nach Fertigstellung.</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- ══════════════ PORTFOLIO ══════════════ -->
-<section id="portfolio">
+<!-- ════════════════════════════════════
+     PORTFOLIO
+════════════════════════════════════ -->
+<section id="portfolio" class="section-light">
     <div class="container">
-        <div class="portfolio-header reveal">
-            <div class="section-tag">Unsere Arbeiten</div>
-            <h2 class="section-title">Ausgewählte Projekte</h2>
-            <p class="section-subtitle">Lassen Sie sich von unseren realisierten Projekten inspirieren – jedes ein Unikat.</p>
+        <div class="section-header">
+            <span class="section-label reveal">Unsere Arbeit</span>
+            <h2 class="section-title reveal">Ausgewählte <em>Projekte</em></h2>
+            <p class="section-sub reveal">Jedes Projekt ist ein Unikat. Entdecken Sie eine Auswahl unserer realisierten Gärten und Außenanlagen.</p>
         </div>
-        <div class="portfolio-filter reveal">
+
+        <div class="filter-bar reveal">
             <button class="filter-btn active" data-filter="all">Alle Projekte</button>
             <button class="filter-btn" data-filter="garten">Gartengestaltung</button>
-            <button class="filter-btn" data-filter="terrasse">Terrassenbau</button>
-            <button class="filter-btn" data-filter="wasser">Wasseranlagen</button>
-            <button class="filter-btn" data-filter="pflaster">Pflasterarbeiten</button>
+            <button class="filter-btn" data-filter="terrasse">Terrassen</button>
+            <button class="filter-btn" data-filter="wasser">Wassergarten</button>
+            <button class="filter-btn" data-filter="pflaster">Pflaster</button>
         </div>
+
         <div class="portfolio-grid">
-            <div class="portfolio-item reveal" data-category="garten" style="transition-delay:.05s">
-                <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80" alt="Mediterraner Garten" loading="lazy">
-                <div class="portfolio-icon"><i class="fas fa-expand-alt"></i></div>
+
+            <div class="portfolio-item large" data-category="garten">
+                <div class="portfolio-img">
+                    <img src="https://images.unsplash.com/photo-1560749003-f4b1e17e2dfd?w=900&q=85&auto=format&fit=crop" alt="Moderner Garten" loading="lazy">
+                </div>
                 <div class="portfolio-overlay">
-                    <div class="portfolio-info"><h3>Mediterraner Garten</h3><p>Gartengestaltung · München</p></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-cat">Gartengestaltung</span>
+                        <h3>Villa Schöneberg</h3>
+                        <p>München, 2024</p>
+                    </div>
+                    <button class="portfolio-zoom" aria-label="Vergrößern">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                    </button>
                 </div>
             </div>
-            <div class="portfolio-item reveal" data-category="terrasse" style="transition-delay:.12s">
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Naturstein Terrasse" loading="lazy">
-                <div class="portfolio-icon"><i class="fas fa-expand-alt"></i></div>
+
+            <div class="portfolio-item" data-category="terrasse">
+                <div class="portfolio-img">
+                    <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=700&q=85&auto=format&fit=crop" alt="Terrasse" loading="lazy">
+                </div>
                 <div class="portfolio-overlay">
-                    <div class="portfolio-info"><h3>Naturstein Terrasse</h3><p>Terrassenbau · Augsburg</p></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-cat">Terrassenbau</span>
+                        <h3>Residenz Grünwald</h3>
+                        <p>Grünwald, 2024</p>
+                    </div>
+                    <button class="portfolio-zoom" aria-label="Vergrößern">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                    </button>
                 </div>
             </div>
-            <div class="portfolio-item reveal" data-category="wasser" style="transition-delay:.2s">
-                <img src="https://images.unsplash.com/photo-1562184552-997c461abbe6?w=600&q=80" alt="Schwimmteich" loading="lazy">
-                <div class="portfolio-icon"><i class="fas fa-expand-alt"></i></div>
+
+            <div class="portfolio-item" data-category="wasser">
+                <div class="portfolio-img">
+                    <img src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?w=700&q=85&auto=format&fit=crop" alt="Naturteich" loading="lazy">
+                </div>
                 <div class="portfolio-overlay">
-                    <div class="portfolio-info"><h3>Schwimmteich mit Naturzone</h3><p>Wasseranlage · Landsberg</p></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-cat">Naturteich</span>
+                        <h3>Seegarten Starnberg</h3>
+                        <p>Starnberg, 2023</p>
+                    </div>
+                    <button class="portfolio-zoom" aria-label="Vergrößern">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                    </button>
                 </div>
             </div>
-            <div class="portfolio-item reveal" data-category="pflaster" style="transition-delay:.28s">
-                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Einfahrt gepflastert" loading="lazy">
-                <div class="portfolio-icon"><i class="fas fa-expand-alt"></i></div>
+
+            <div class="portfolio-item" data-category="pflaster">
+                <div class="portfolio-img">
+                    <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=700&q=85&auto=format&fit=crop" alt="Pflaster" loading="lazy">
+                </div>
                 <div class="portfolio-overlay">
-                    <div class="portfolio-info"><h3>Einfahrt &amp; Vorgartengestaltung</h3><p>Pflasterarbeiten · Starnberg</p></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-cat">Pflasterarbeiten</span>
+                        <h3>Landhaus Rosenheim</h3>
+                        <p>Rosenheim, 2023</p>
+                    </div>
+                    <button class="portfolio-zoom" aria-label="Vergrößern">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                    </button>
                 </div>
             </div>
-            <div class="portfolio-item reveal" data-category="garten" style="transition-delay:.36s">
-                <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=600&q=80" alt="Staudengarten" loading="lazy">
-                <div class="portfolio-icon"><i class="fas fa-expand-alt"></i></div>
+
+            <div class="portfolio-item" data-category="garten">
+                <div class="portfolio-img">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=700&q=85&auto=format&fit=crop" alt="Garten" loading="lazy">
+                </div>
                 <div class="portfolio-overlay">
-                    <div class="portfolio-info"><h3>Üppiger Staudengarten</h3><p>Bepflanzung · Dachau</p></div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-cat">Gartengestaltung</span>
+                        <h3>Stadtgarten Bogenhausen</h3>
+                        <p>München, 2023</p>
+                    </div>
+                    <button class="portfolio-zoom" aria-label="Vergrößern">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                    </button>
                 </div>
             </div>
-            <div class="portfolio-item reveal" data-category="terrasse" style="transition-delay:.44s">
-                <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=600&q=80" alt="WPC Terrasse" loading="lazy">
-                <div class="portfolio-icon"><i class="fas fa-expand-alt"></i></div>
-                <div class="portfolio-overlay">
-                    <div class="portfolio-info"><h3>Thermoholz Lounge-Terrasse</h3><p>Terrassenbau · München</p></div>
+
+            <div class="portfolio-item large" data-category="terrasse">
+                <div class="portfolio-img">
+                    <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=900&q=85&auto=format&fit=crop" alt="Terrasse" loading="lazy">
                 </div>
+                <div class="portfolio-overlay">
+                    <div class="portfolio-info">
+                        <span class="portfolio-cat">Terrassenbau</span>
+                        <h3>Penthouse Schwabing</h3>
+                        <p>München, 2024</p>
+                    </div>
+                    <button class="portfolio-zoom" aria-label="Vergrößern">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="portfolio-cta reveal">
+            <a href="#kontakt" class="btn-primary btn-magnetic">
+                <span>Ihr Projekt anfragen</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" role="dialog" aria-modal="true" aria-label="Bildvorschau">
+        <button class="lb-close" onclick="closeLightbox()" aria-label="Schließen">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <img id="lightboxImg" src="" alt="Portfolio Bild">
+    </div>
+</section>
+
+<!-- ════════════════════════════════════
+     STATS
+════════════════════════════════════ -->
+<section id="stats" class="section-dark section-stats">
+    <div class="stats-bg">
+        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1920&q=70&auto=format&fit=crop" alt="" aria-hidden="true" loading="lazy">
+        <div class="stats-overlay"></div>
+    </div>
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item reveal" data-delay="0">
+                <div class="stat-number">
+                    <span class="counter" data-target="526">0</span><span class="stat-suffix">+</span>
+                </div>
+                <div class="stat-label">Abgeschlossene Projekte</div>
+            </div>
+            <div class="stat-item reveal" data-delay="0.1">
+                <div class="stat-number">
+                    <span class="counter" data-target="25">0</span><span class="stat-suffix">+</span>
+                </div>
+                <div class="stat-label">Jahre Erfahrung</div>
+            </div>
+            <div class="stat-item reveal" data-delay="0.2">
+                <div class="stat-number">
+                    <span class="counter" data-target="98">0</span><span class="stat-suffix">%</span>
+                </div>
+                <div class="stat-label">Empfehlen uns weiter</div>
+            </div>
+            <div class="stat-item reveal" data-delay="0.3">
+                <div class="stat-number">
+                    <span class="counter" data-target="40">0</span>
+                </div>
+                <div class="stat-label">Fachkundige Mitarbeiter</div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ══════════════ REFERENZEN ══════════════ -->
-<section id="referenzen">
+<!-- ════════════════════════════════════
+     WARUM WIR
+════════════════════════════════════ -->
+<section id="warum-wir" class="section-light">
     <div class="container">
-        <div class="testimonials-header reveal">
-            <div class="section-tag">Kundenstimmen</div>
-            <h2 class="section-title">Was unsere Kunden sagen</h2>
-            <p class="section-subtitle">Über 480 zufriedene Kunden sprechen für sich.</p>
+        <div class="section-header">
+            <span class="section-label reveal">Ihre Vorteile</span>
+            <h2 class="section-title reveal">Warum <em>Grünwerk</em>?</h2>
         </div>
-        <div class="testimonials-slider reveal">
+
+        <div class="usp-grid">
+            <div class="usp-card reveal" data-delay="0">
+                <div class="usp-num">01</div>
+                <div class="usp-icon">
+                    <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 4L4 12V20C4 29 11 37 20 39C29 37 36 29 36 20V12L20 4Z"/><polyline points="14 20 18 24 26 16"/></svg>
+                </div>
+                <h3>Meisterbetrieb</h3>
+                <p>Als zertifizierter Meisterbetrieb garantieren wir höchste Qualität und Fachkompetenz bei jedem Projekt.</p>
+            </div>
+            <div class="usp-card reveal" data-delay="0.1">
+                <div class="usp-num">02</div>
+                <div class="usp-icon">
+                    <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="20" cy="20" r="16"/><path d="M20 12v8l5 4"/></svg>
+                </div>
+                <h3>Termingarantie</h3>
+                <p>Wir halten unsere Zusagen. Vereinbarte Termine werden eingehalten – oder wir kompensieren die Verzögerung.</p>
+            </div>
+            <div class="usp-card reveal" data-delay="0.2">
+                <div class="usp-num">03</div>
+                <div class="usp-icon">
+                    <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="8" width="28" height="24" rx="2"/><line x1="6" y1="16" x2="34" y2="16"/><line x1="14" y1="8" x2="14" y2="16"/><line x1="26" y1="8" x2="26" y2="16"/></svg>
+                </div>
+                <h3>Festpreisgarantie</h3>
+                <p>Unser Angebot ist verbindlich. Keine versteckten Kosten, keine Überraschungen – nur Transparenz von Anfang an.</p>
+            </div>
+            <div class="usp-card reveal" data-delay="0.3">
+                <div class="usp-num">04</div>
+                <div class="usp-icon">
+                    <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 6C20 6 8 14 8 24C8 31 13 36 20 36C27 36 32 31 32 24C32 14 20 6 20 6Z"/><line x1="20" y1="14" x2="20" y2="36"/></svg>
+                </div>
+                <h3>Nachhaltigkeit</h3>
+                <p>Wir verwenden ausschließlich nachhaltige Materialien und ökologische Methoden – für Ihren Garten und unsere Umwelt.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ════════════════════════════════════
+     VORHER / NACHHER
+════════════════════════════════════ -->
+<section id="vorher-nachher" class="section-dark">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label reveal">Transformation</span>
+            <h2 class="section-title reveal">Vorher <em>&amp;</em> Nachher</h2>
+            <p class="section-sub reveal">Ziehen Sie den Regler und erleben Sie die beeindruckende Verwandlung.</p>
+        </div>
+
+        <div class="ba-wrapper reveal">
+            <div class="ba-container" id="baContainer">
+                <div class="ba-after">
+                    <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1200&q=85&auto=format&fit=crop" alt="Nachher">
+                    <span class="ba-label ba-label-right">Nachher</span>
+                </div>
+                <div class="ba-before" id="baBefore">
+                    <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&q=85&auto=format&fit=crop" alt="Vorher">
+                    <span class="ba-label ba-label-left">Vorher</span>
+                </div>
+                <div class="ba-handle" id="baHandle">
+                    <div class="ba-handle-line"></div>
+                    <div class="ba-handle-circle">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l-6-6 6-6"/><path d="M15 6l6 6-6 6"/></svg>
+                    </div>
+                    <div class="ba-handle-line"></div>
+                </div>
+            </div>
+            <p class="ba-hint">&#8592; Regler ziehen &#8594;</p>
+        </div>
+    </div>
+</section>
+
+<!-- ════════════════════════════════════
+     TESTIMONIALS
+════════════════════════════════════ -->
+<section id="testimonials" class="section-light">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label reveal">Was Kunden sagen</span>
+            <h2 class="section-title reveal">Echte <em>Erfahrungen</em></h2>
+        </div>
+
+        <div class="testimonials-wrapper reveal">
             <div class="testimonials-track" id="testimonialsTrack">
+
                 <div class="testimonial-card">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p class="testimonial-text">„GRÜNWERK hat unseren verwilderten Garten in ein absolutes Traumparadies verwandelt. Die Beratung war erstklassig, die Ausführung top und der Preis absolut fair. Wir würden sofort wieder buchen!"</p>
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="testimonial-text">&#8222;Grünwerk hat unseren verwilderten Garten in ein wahres Paradies verwandelt. Die Beratung war kompetent, der Ablauf reibungslos und das Ergebnis übertrifft alle Erwartungen. Absolut empfehlenswert!&#8220;</p>
                     <div class="testimonial-author">
-                        <div class="author-avatar">SM</div>
-                        <div class="author-info"><h4>Sandra M.</h4><p>München · Gartengestaltung</p></div>
+                        <div class="author-avatar">MS</div>
+                        <div>
+                            <strong>Maria S.</strong>
+                            <span>München, Gartengestaltung 2024</span>
+                        </div>
                     </div>
                 </div>
+
                 <div class="testimonial-card">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p class="testimonial-text">„Unsere Terrasse ist ein Kunstwerk! Das Team war pünktlich, sauber und unglaublich professionell. Die 3D-Planung hat uns geholfen, uns das Ergebnis perfekt vorzustellen. Absolute Empfehlung!"</p>
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="testimonial-text">&#8222;Die Terrasse ist einfach traumhaft geworden. Naturstein genau nach unseren Vorstellungen, pünktliche Fertigstellung und ein super freundliches Team. Danke Grünwerk!&#8220;</p>
                     <div class="testimonial-author">
                         <div class="author-avatar">TK</div>
-                        <div class="author-info"><h4>Thomas K.</h4><p>Augsburg · Terrassenbau</p></div>
+                        <div>
+                            <strong>Thomas K.</strong>
+                            <span>Grünwald, Terrassenbau 2024</span>
+                        </div>
                     </div>
                 </div>
+
                 <div class="testimonial-card">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p class="testimonial-text">„Der Schwimmteich wird von der ganzen Familie geliebt! Das Team hat unsere kühnsten Erwartungen übertroffen. Herr Müller nimmt sich wirklich Zeit – Profis durch und durch!"</p>
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="testimonial-text">&#8222;Unser Naturteich ist der Mittelpunkt unseres Gartens geworden. Grünwerk hat ein Ökosystem geschaffen, das sich selbst reguliert. Beeindruckend!&#8220;</p>
                     <div class="testimonial-author">
-                        <div class="author-avatar">LH</div>
-                        <div class="author-info"><h4>Lisa H.</h4><p>Starnberg · Teichbau</p></div>
+                        <div class="author-avatar">AB</div>
+                        <div>
+                            <strong>Anna B.</strong>
+                            <span>Starnberg, Naturteich 2023</span>
+                        </div>
                     </div>
                 </div>
+
                 <div class="testimonial-card">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p class="testimonial-text">„Von der Einfahrt bis zum Garten – alles perfekt gepflastert. Unkomplizierte Zusammenarbeit, transparente Kommunikation, begeisterte Nachbarn. Ein super Team!"</p>
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="testimonial-text">&#8222;Professionell, zuverlässig und kreativ. Das Pflaster-Design unserer Einfahrt ist heute ein Blickfang in der ganzen Straße. Jederzeit wieder!&#8220;</p>
                     <div class="testimonial-author">
-                        <div class="author-avatar">MR</div>
-                        <div class="author-info"><h4>Martin R.</h4><p>Landsberg · Pflasterarbeiten</p></div>
+                        <div class="author-avatar">PW</div>
+                        <div>
+                            <strong>Peter W.</strong>
+                            <span>Rosenheim, Pflasterarbeiten 2023</span>
+                        </div>
                     </div>
                 </div>
+
                 <div class="testimonial-card">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <p class="testimonial-text">„Ich kann GRÜNWERK nur wärmstens empfehlen! Das Team ist herzlich, kompetent und zuverlässig. Unser Garten ist jetzt unser absoluter Lieblingsort."</p>
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="testimonial-text">&#8222;Von der ersten Beratung bis zur Übergabe war alles perfekt. Das Team ist unglaublich detailverliebt und hat genau verstanden, was wir uns vorgestellt haben. 100% Weiterempfehlung!&#8220;</p>
                     <div class="testimonial-author">
-                        <div class="author-avatar">AW</div>
-                        <div class="author-info"><h4>Anna W.</h4><p>Dachau · Komplettgestaltung</p></div>
+                        <div class="author-avatar">SR</div>
+                        <div>
+                            <strong>Sabine R.</strong>
+                            <span>München, Komplettgestaltung 2024</span>
+                        </div>
                     </div>
                 </div>
+
+            </div>
+
+            <div class="slider-controls">
+                <button id="prevBtn" class="slider-btn" aria-label="Vorheriger">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                </button>
+                <div id="sliderDots" class="slider-dots"></div>
+                <button id="nextBtn" class="slider-btn" aria-label="Nächster">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
             </div>
         </div>
-        <div class="slider-controls">
-            <button class="slider-btn" id="prevBtn" aria-label="Zurück"><i class="fas fa-arrow-left"></i></button>
-            <div class="slider-dots" id="sliderDots"></div>
-            <button class="slider-btn" id="nextBtn" aria-label="Weiter"><i class="fas fa-arrow-right"></i></button>
+
+        <div class="rating-bar reveal">
+            <div class="rating-item">
+                <span class="rating-platform">Google</span>
+                <div class="rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <span>4,9 / 5 &mdash; 87 Bewertungen</span>
+            </div>
+            <div class="rating-divider"></div>
+            <div class="rating-item">
+                <span class="rating-platform">Houzz</span>
+                <div class="rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <span>4,8 / 5 &mdash; 52 Bewertungen</span>
+            </div>
+            <div class="rating-divider"></div>
+            <div class="rating-item">
+                <span class="rating-platform">ProvenExpert</span>
+                <div class="rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <span>4,9 / 5 &mdash; 134 Bewertungen</span>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- ══════════════ KONTAKT ══════════════ -->
-<section id="kontakt" style="position:relative;overflow:hidden;">
-    <div class="blob blob-green" style="width:450px;height:450px;top:-80px;right:-100px;opacity:.05;animation:blobFloat1 12s ease infinite;"></div>
-    <div class="blob blob-gold"  style="width:300px;height:300px;bottom:-60px;left:-60px;opacity:.04;animation:blobFloat2 9s ease infinite;"></div>
-
-    <div class="container" style="position:relative;z-index:2;">
+<!-- ════════════════════════════════════
+     KONTAKT
+════════════════════════════════════ -->
+<section id="kontakt" class="section-dark">
+    <div class="container">
         <div class="contact-grid">
-            <div class="contact-info reveal-left">
-                <div class="section-tag">Kontakt</div>
-                <h2 class="section-title">Starten wir Ihr Projekt</h2>
-                <p>Bereit für Ihren Traumgarten? Kontaktieren Sie uns für eine kostenlose und unverbindliche Erstberatung. Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
-                <div class="contact-items">
+            <div class="contact-info">
+                <span class="section-label reveal">Kontakt</span>
+                <h2 class="section-title reveal">Lassen Sie uns <em>starten</em></h2>
+                <p class="reveal">Schildern Sie uns Ihr Projekt und wir melden uns innerhalb von 24 Stunden mit einem unverbindlichen Angebot.</p>
+
+                <div class="contact-details reveal">
+                    <a href="tel:+4989123456789" class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.88 13a19.79 19.79 0 01-3.07-8.67A2 2 0 013.99 2.18h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        </div>
+                        <div>
+                            <strong>Telefon</strong>
+                            <span>+49 89 123 456 789</span>
+                        </div>
+                    </a>
+                    <a href="mailto:info@gruenwerk.de" class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <div>
+                            <strong>E-Mail</strong>
+                            <span>info@gruenwerk.de</span>
+                        </div>
+                    </a>
                     <div class="contact-item">
-                        <div class="contact-item-icon"><i class="fas fa-phone-alt"></i></div>
-                        <div class="contact-item-text"><h4>Telefon</h4><p>+49 (0) 89 123 456 789</p></div>
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div>
+                            <strong>Standort</strong>
+                            <span>Musterstra&#223;e 12, 80331 München</span>
+                        </div>
                     </div>
                     <div class="contact-item">
-                        <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
-                        <div class="contact-item-text"><h4>E-Mail</h4><p>info@gruenwerk-garten.de</p></div>
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <div>
+                            <strong>Öffnungszeiten</strong>
+                            <span>Mo&ndash;Fr: 8:00&ndash;18:00 Uhr</span>
+                        </div>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-item-icon"><i class="fas fa-map-marker-alt"></i></div>
-                        <div class="contact-item-text"><h4>Adresse</h4><p>Musterstraße 42<br>80331 München</p></div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-item-icon"><i class="fas fa-clock"></i></div>
-                        <div class="contact-item-text"><h4>Öffnungszeiten</h4><p>Mo–Fr 7:00–18:00 Uhr<br>Sa 8:00–14:00 Uhr</p></div>
+                </div>
+
+                <div class="contact-badge reveal">
+                    <div class="badge-check">&#10003;</div>
+                    <div>
+                        <strong>Kostenlose Erstberatung</strong>
+                        <span>Wir kommen zu Ihnen nach Hause – unverbindlich und gratis.</span>
                     </div>
                 </div>
             </div>
-            <div class="contact-form reveal-right">
-                <div id="formContent">
-                    <h3 style="font-size:21px;font-weight:700;margin-bottom:7px;">Kostenlose Beratung anfragen</h3>
-                    <p style="color:var(--gray);font-size:14px;margin-bottom:26px;">Füllen Sie das Formular aus – wir melden uns schnellstmöglich.</p>
-                    <form id="contactForm" novalidate>
+
+            <div class="contact-form-wrap reveal">
+                <form id="contactForm" class="contact-form glass-card">
+                    <div id="formContent">
+                        <h3>Projekt anfragen</h3>
                         <div class="form-row">
                             <div class="form-group">
-                                <label>Vorname *</label>
-                                <input type="text" placeholder="Max" required>
+                                <label for="fname">Vorname *</label>
+                                <input type="text" id="fname" name="fname" placeholder="Max" required>
                             </div>
                             <div class="form-group">
-                                <label>Nachname *</label>
-                                <input type="text" placeholder="Mustermann" required>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>E-Mail *</label>
-                                <input type="email" placeholder="max@beispiel.de" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Telefon</label>
-                                <input type="tel" placeholder="+49 89 ...">
+                                <label for="lname">Nachname *</label>
+                                <input type="text" id="lname" name="lname" placeholder="Mustermann" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label>Gewünschte Leistung *</label>
-                            <select required>
-                                <option value="">Bitte wählen …</option>
-                                <option>Gartenplanung &amp; Design</option>
+                            <label for="email">E-Mail *</label>
+                            <input type="email" id="email" name="email" placeholder="max@beispiel.de" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefon</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+49 89 ...">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Gewünschte Leistung</label>
+                            <select id="service" name="service">
+                                <option value="">Bitte wählen...</option>
+                                <option>Gartengestaltung</option>
                                 <option>Terrassenbau</option>
+                                <option>Naturteich / Pool</option>
                                 <option>Pflasterarbeiten</option>
-                                <option>Teich &amp; Wassergarten</option>
-                                <option>Bepflanzung &amp; Rasen</option>
-                                <option>Gartenpflege &amp; Wartung</option>
+                                <option>Baumpflege</option>
+                                <option>Gartenbeleuchtung</option>
                                 <option>Sonstiges</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label>Ihre Nachricht *</label>
-                            <textarea placeholder="Beschreiben Sie kurz Ihr Projekt und Ihre Wünsche …" required></textarea>
+                            <label for="message">Ihr Projekt *</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Beschreiben Sie kurz Ihr Vorhaben..." required></textarea>
                         </div>
-                        <button type="submit" class="btn-submit">
-                            <i class="fas fa-paper-plane"></i>
-                            Anfrage jetzt absenden
+                        <button type="submit" class="btn-submit btn-magnetic">
+                            <span>Anfrage senden</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
                         </button>
-                    </form>
-                </div>
-                <div class="form-success" id="formSuccess">
-                    <i class="fas fa-check-circle"></i>
-                    <h3>Vielen Dank!</h3>
-                    <p>Ihre Anfrage wurde erfolgreich übermittelt.<br>Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
-                </div>
+                        <p class="form-note">* Pflichtfeld &middot; Ihre Daten werden nicht weitergegeben.</p>
+                    </div>
+                    <div id="formSuccess" class="form-success" style="display:none">
+                        <div class="success-icon">&#10003;</div>
+                        <h3>Vielen Dank!</h3>
+                        <p>Ihre Anfrage wurde erfolgreich gesendet. Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ══════════════ WHATSAPP FLOAT ══════════════ -->
-<div class="wa-float">
-    <span class="wa-tooltip">Direkt schreiben!</span>
-    <a href="https://wa.me/4989123456789" class="wa-btn" target="_blank" rel="noopener" aria-label="WhatsApp Chat">
-        <div class="wa-pulse"></div>
-        <i class="fab fa-whatsapp"></i>
-    </a>
-</div>
+<!-- ════════════════════════════════════
+     FOOTER
+════════════════════════════════════ -->
+<footer id="footer">
+    <div class="footer-top">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#hero" class="nav-logo footer-logo">
+                        <div class="logo-icon">
+                            <svg viewBox="0 0 40 40" fill="none">
+                                <path d="M20 3C20 3 6 13 6 26C6 34 12 39 20 39C28 39 34 34 34 26C34 13 20 3 20 3Z" stroke="currentColor" stroke-width="1.5"/>
+                                <line x1="20" y1="13" x2="20" y2="39" stroke="currentColor" stroke-width="1.5"/>
+                            </svg>
+                        </div>
+                        <div class="logo-text">
+                            <span class="logo-name">Grünwerk</span>
+                            <span class="logo-sub">Garten &amp; Landschaftsbau</span>
+                        </div>
+                    </a>
+                    <p>Ihr Premium-Partner für außergewöhnliche Gartenanlagen in Bayern und Österreich. Seit 1998.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram" class="social-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+                        </a>
+                        <a href="#" aria-label="Facebook" class="social-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Houzz" class="social-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        </a>
+                    </div>
+                </div>
 
-<!-- ══════════════ FOOTER ══════════════ -->
-<footer>
-    <div class="container">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <a href="#hero" class="logo" style="margin-bottom:4px;display:inline-flex;">
-                    <div class="logo-icon"><i class="fas fa-seedling"></i></div>
-                    <div class="logo-text"><h2>GRÜNWERK</h2><span>Garten &amp; Landschaftsbau</span></div>
-                </a>
-                <p>Ihr zuverlässiger Meisterbetrieb für professionellen Garten- und Landschaftsbau. Wir schaffen grüne Lebensräume, die begeistern – seit 2008.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social-link" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
-                    <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <div class="footer-col">
+                    <h4>Leistungen</h4>
+                    <ul>
+                        <li><a href="#leistungen">Gartengestaltung</a></li>
+                        <li><a href="#leistungen">Terrassenbauten</a></li>
+                        <li><a href="#leistungen">Naturteiche</a></li>
+                        <li><a href="#leistungen">Pflasterarbeiten</a></li>
+                        <li><a href="#leistungen">Baumpflege</a></li>
+                        <li><a href="#leistungen">Beleuchtung</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Unternehmen</h4>
+                    <ul>
+                        <li><a href="#ueber-uns">Über uns</a></li>
+                        <li><a href="#prozess">Unser Prozess</a></li>
+                        <li><a href="#portfolio">Projekte</a></li>
+                        <li><a href="#testimonials">Referenzen</a></li>
+                        <li><a href="#kontakt">Kontakt</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Kontakt</h4>
+                    <address>
+                        <p>Musterstra&#223;e 12<br>80331 München</p>
+                        <p><a href="tel:+4989123456789">+49 89 123 456 789</a></p>
+                        <p><a href="mailto:info@gruenwerk.de">info@gruenwerk.de</a></p>
+                    </address>
                 </div>
             </div>
-            <div class="footer-col">
-                <h4>Leistungen</h4>
-                <ul class="footer-links">
-                    <li><a href="#leistungen"><i class="fas fa-angle-right"></i> Gartenplanung</a></li>
-                    <li><a href="#leistungen"><i class="fas fa-angle-right"></i> Terrassenbau</a></li>
-                    <li><a href="#leistungen"><i class="fas fa-angle-right"></i> Pflasterarbeiten</a></li>
-                    <li><a href="#leistungen"><i class="fas fa-angle-right"></i> Teich &amp; Wasser</a></li>
-                    <li><a href="#leistungen"><i class="fas fa-angle-right"></i> Bepflanzung</a></li>
-                    <li><a href="#leistungen"><i class="fas fa-angle-right"></i> Gartenpflege</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Unternehmen</h4>
-                <ul class="footer-links">
-                    <li><a href="#ueber-uns"><i class="fas fa-angle-right"></i> Über uns</a></li>
-                    <li><a href="#prozess"><i class="fas fa-angle-right"></i> So arbeiten wir</a></li>
-                    <li><a href="#portfolio"><i class="fas fa-angle-right"></i> Portfolio</a></li>
-                    <li><a href="#referenzen"><i class="fas fa-angle-right"></i> Referenzen</a></li>
-                    <li><a href="#kontakt"><i class="fas fa-angle-right"></i> Jobs</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Kontakt</h4>
-                <ul class="footer-links">
-                    <li><a href="tel:+4989123456789"><i class="fas fa-phone-alt"></i> +49 89 123 456 789</a></li>
-                    <li><a href="mailto:info@gruenwerk-garten.de"><i class="fas fa-envelope"></i> info@gruenwerk.de</a></li>
-                    <li><a href="#kontakt"><i class="fas fa-map-marker-alt"></i> München &amp; Umgebung</a></li>
-                </ul>
-            </div>
         </div>
-        <div class="footer-bottom">
-            <p>© 2024 GRÜNWERK Garten &amp; Landschaftsbau. Alle Rechte vorbehalten.</p>
-            <div class="footer-bottom-links">
+    </div>
+
+    <div class="footer-bottom">
+        <div class="container">
+            <p>&copy; 2025 Grünwerk Garten &amp; Landschaftsbau GmbH. Alle Rechte vorbehalten.</p>
+            <div class="footer-legal">
                 <a href="#">Impressum</a>
                 <a href="#">Datenschutz</a>
                 <a href="#">AGB</a>
@@ -718,16 +1008,28 @@
     </div>
 </footer>
 
-<!-- ══════════════ LIGHTBOX ══════════════ -->
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
-    <div class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></div>
-    <img id="lightboxImg" src="" alt="Vergrößertes Projektbild">
-</div>
+<!-- Floating Buttons -->
+<a href="https://wa.me/4989123456789" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span class="wa-tooltip">WhatsApp</span>
+</a>
 
-<!-- ══════════════ COOKIE BANNER ══════════════ -->
-<div class="cookie-banner" id="cookieBanner">
-    <p>Wir verwenden Cookies, um Ihnen das beste Erlebnis auf unserer Website zu bieten. <a href="#">Mehr erfahren</a></p>
-    <button class="cookie-accept" onclick="acceptCookies()">Akzeptieren &amp; Schließen</button>
+<button class="back-to-top" id="backToTop" aria-label="Nach oben">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<!-- Cookie Banner -->
+<div id="cookieBanner" class="cookie-banner">
+    <div class="cookie-content">
+        <div class="cookie-text">
+            <strong>Diese Website verwendet Cookies</strong>
+            <p>Wir nutzen Cookies für ein optimales Nutzererlebnis. Weitere Infos in unserer <a href="#">Datenschutzerklärung</a>.</p>
+        </div>
+        <div class="cookie-actions">
+            <button onclick="acceptCookies()" class="btn-cookie-accept">Alle akzeptieren</button>
+            <button onclick="acceptCookies()" class="btn-cookie-decline">Nur notwendige</button>
+        </div>
+    </div>
 </div>
 
 <!-- Scripts -->
