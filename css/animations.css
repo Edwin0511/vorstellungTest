@@ -1,0 +1,171 @@
+/* ═══════════════════════════════════════════
+   GRÜNWERK – Keyframes & Animation Classes
+═══════════════════════════════════════════ */
+
+/* ── Entrances ── */
+@keyframes fadeInDown {
+    from { opacity:0; transform:translateY(-24px); }
+    to   { opacity:1; transform:translateY(0); }
+}
+@keyframes fadeInUp {
+    from { opacity:0; transform:translateY(44px); }
+    to   { opacity:1; transform:translateY(0); }
+}
+@keyframes fadeInLeft {
+    from { opacity:0; transform:translateX(-44px); }
+    to   { opacity:1; transform:translateX(0); }
+}
+@keyframes fadeInRight {
+    from { opacity:0; transform:translateX(44px); }
+    to   { opacity:1; transform:translateX(0); }
+}
+@keyframes scaleIn {
+    from { opacity:0; transform:scale(.85); }
+    to   { opacity:1; transform:scale(1); }
+}
+
+/* ── Hero Entrance ── */
+@keyframes heroBadge { from{opacity:0;transform:translateY(-22px)} to{opacity:1;transform:translateY(0)} }
+@keyframes heroTitle { from{opacity:0;transform:translateY(50px)} to{opacity:1;transform:translateY(0)} }
+@keyframes heroSub   { from{opacity:0;transform:translateY(36px)} to{opacity:1;transform:translateY(0)} }
+@keyframes heroBtns  { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
+@keyframes heroStats { from{opacity:0;transform:translateX(30px)} to{opacity:1;transform:translateX(0)} }
+
+/* ── Looping ── */
+@keyframes floatUp {
+    0%   { transform:translateY(110vh) rotate(0deg);   opacity:0; }
+    8%   { opacity:.9; }
+    88%  { opacity:.4; }
+    100% { transform:translateY(-120px) rotate(720deg); opacity:0; }
+}
+@keyframes marquee    { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+@keyframes scrollLine { 0%,100%{transform:scaleY(1);opacity:1} 50%{transform:scaleY(.45);opacity:.35} }
+@keyframes waPulse    { 0%{transform:scale(1);opacity:.55} 100%{transform:scale(1.85);opacity:0} }
+
+/* ── Preloader ── */
+@keyframes preloaderSpin {
+    0%  { transform:rotate(0deg)  scale(1);    color:#1a5c2e; }
+    50% { transform:rotate(180deg) scale(1.15); color:#c9a84c; }
+    100%{ transform:rotate(360deg) scale(1);   color:#1a5c2e; }
+}
+@keyframes preloaderFill {
+    from { width:0; }
+    to   { width:100%; }
+}
+@keyframes preloaderFadeOut {
+    from { opacity:1; transform:translateY(0); }
+    to   { opacity:0; transform:translateY(-100%); }
+}
+
+/* ── Cursor ── */
+@keyframes cursorPing {
+    0%   { transform:translate(-50%,-50%) scale(1); opacity:1; }
+    100% { transform:translate(-50%,-50%) scale(2.5); opacity:0; }
+}
+
+/* ── Typewriter ── */
+@keyframes typedBlink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+/* ── Blobs ── */
+@keyframes blobFloat1 {
+    0%,100% { transform:translate(0,0) scale(1); }
+    33%  { transform:translate(30px,-25px) scale(1.06); }
+    66%  { transform:translate(-18px,22px) scale(.94); }
+}
+@keyframes blobFloat2 {
+    0%,100% { transform:translate(0,0) scale(1); }
+    40%  { transform:translate(-22px,18px) scale(1.08); }
+    70%  { transform:translate(28px,-30px) scale(.96); }
+}
+
+/* ── Button Ripple ── */
+@keyframes rippleAnim {
+    from { transform:scale(0); opacity:.7; }
+    to   { transform:scale(4); opacity:0; }
+}
+
+/* ── Card Glow ── */
+@keyframes borderGlow {
+    0%,100% { box-shadow:0 0 0 0 rgba(201,168,76,0); }
+    50%     { box-shadow:0 0 30px 6px rgba(201,168,76,.25); }
+}
+
+/* ── CTA Pulse ── */
+@keyframes ctaPulse {
+    0%,100% { box-shadow:0 8px 30px rgba(201,168,76,.4); }
+    50%     { box-shadow:0 8px 50px rgba(201,168,76,.75), 0 0 0 10px rgba(201,168,76,.1); }
+}
+
+/* ── Shimmer ── */
+@keyframes shimmerMove {
+    from { background-position:-200% 0; }
+    to   { background-position: 200% 0; }
+}
+
+/* ── Word Reveal ── */
+@keyframes wordSlideUp {
+    from { transform:translateY(105%); opacity:0; }
+    to   { transform:translateY(0);    opacity:1; }
+}
+
+/* ── Section Dot ── */
+@keyframes dotPing {
+    0%   { transform:scale(1);   opacity:1; }
+    100% { transform:scale(2.2); opacity:0; }
+}
+
+
+/* ════════════════════════════════════
+   Scroll-Reveal Helper Classes
+════════════════════════════════════ */
+.reveal {
+    opacity: 0;
+    transform: translateY(42px);
+    transition: opacity .75s ease, transform .75s ease;
+}
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-48px);
+    transition: opacity .75s ease, transform .75s ease;
+}
+.reveal-right {
+    opacity: 0;
+    transform: translateX(48px);
+    transition: opacity .75s ease, transform .75s ease;
+}
+.reveal.visible,
+.reveal-left.visible,
+.reveal-right.visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* Word-by-word heading reveal */
+.word-wrap {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+    line-height: 1.15;
+}
+.word {
+    display: inline-block;
+    transform: translateY(105%);
+    opacity: 0;
+    transition: transform .65s cubic-bezier(.4,0,.2,1), opacity .65s ease;
+    margin-right: .22em;
+}
+.split-ready.visible .word {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Typed cursor blink */
+.type-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.1em;
+    background: #c9a84c;
+    vertical-align: text-bottom;
+    margin-left: 2px;
+    animation: typedBlink .85s step-end infinite;
+}

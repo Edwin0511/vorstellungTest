@@ -1,0 +1,65 @@
+/* ═══════════════════════════════════════════
+   GRÜNWERK – CSS Variables & Base Reset
+═══════════════════════════════════════════ */
+:root {
+    --primary:         #1a5c2e;
+    --primary-light:   #2d7a40;
+    --primary-dark:    #0c2e17;
+    --gold:            #c9a84c;
+    --gold-light:      #e8c96a;
+    --gold-dark:       #a07830;
+    --dark:            #0a1a0d;
+    --light:           #f7f9f5;
+    --gray:            #6b7280;
+    --white:           #ffffff;
+    --shadow:          0 20px 60px rgba(0,0,0,.16);
+    --shadow-sm:       0 4px 20px rgba(0,0,0,.08);
+    --shadow-gold:     0 10px 40px rgba(201,168,76,.3);
+    --shadow-green:    0 10px 40px rgba(26,92,46,.3);
+    --radius:          16px;
+    --radius-sm:       10px;
+    --transition:      all 0.4s cubic-bezier(0.4,0,0.2,1);
+    --font-heading:    'Playfair Display', serif;
+    --font-body:       'Inter', sans-serif;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-body);
+    color: #1a1a1a;
+    overflow-x: hidden;
+    background: var(--light);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    font-family: var(--font-body);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar       { width: 5px; }
+::-webkit-scrollbar-track { background: var(--dark); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+/* Hide default cursor on pointer devices */
+@media (pointer: fine) {
+    html, body, * { cursor: none !important; }
+}

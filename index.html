@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRÜNWERK – Garten & Landschaftsbau | Ihr Traumgarten wartet</title>
+    <meta name="description" content="Zertifizierter Meisterbetrieb für Garten- und Landschaftsbau. Gartenplanung, Terrassenbau, Pflasterarbeiten, Teichanlagen. Kostenlose Erstberatung!">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Stylesheets (order matters) -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- ══════════════ PRELOADER ══════════════ -->
+<div id="preloader">
+    <div class="pl-icon"><i class="fas fa-seedling"></i></div>
+    <div class="pl-name">GRÜNWERK</div>
+    <div class="pl-sub">Garten &amp; Landschaftsbau</div>
+    <div class="pl-bar"><div class="pl-fill"></div></div>
+</div>
+
+<!-- ══════════════ CUSTOM CURSOR ══════════════ -->
+<div id="cursorDot"></div>
+<div id="cursorRing"></div>
+
+<!-- ══════════════ PROGRESS BAR ══════════════ -->
+<div id="progress-bar"></div>
+
+<!-- ══════════════ SECTION DOTS ══════════════ -->
+<nav id="sectionDots" aria-label="Seitennavigation">
+    <div class="sd-dot active" data-section="hero">
+        <span class="sd-label">Start</span>
+    </div>
+    <div class="sd-dot" data-section="leistungen">
+        <span class="sd-label">Leistungen</span>
+    </div>
+    <div class="sd-dot" data-section="ueber-uns">
+        <span class="sd-label">Über uns</span>
+    </div>
+    <div class="sd-dot" data-section="stats">
+        <span class="sd-label">Zahlen</span>
+    </div>
+    <div class="sd-dot" data-section="prozess">
+        <span class="sd-label">Prozess</span>
+    </div>
+    <div class="sd-dot" data-section="vorher-nachher">
+        <span class="sd-label">Vorher/Nachher</span>
+    </div>
+    <div class="sd-dot" data-section="portfolio">
+        <span class="sd-label">Portfolio</span>
+    </div>
+    <div class="sd-dot" data-section="referenzen">
+        <span class="sd-label">Referenzen</span>
+    </div>
+    <div class="sd-dot" data-section="kontakt">
+        <span class="sd-label">Kontakt</span>
+    </div>
+</nav>
+
+<!-- ══════════════ USP STRIP ══════════════ -->
+<div class="usp-strip">
+    <div class="usp-track">
+        <div class="usp-item"><i class="fas fa-award"></i> Zertifizierter Meisterbetrieb</div>
+        <div class="usp-item"><i class="fas fa-clock"></i> 15+ Jahre Erfahrung</div>
+        <div class="usp-item"><i class="fas fa-leaf"></i> Nachhaltige Materialien</div>
+        <div class="usp-item"><i class="fas fa-star"></i> 500+ begeisterte Kunden</div>
+        <div class="usp-item"><i class="fas fa-phone-alt"></i> Kostenlose Erstberatung</div>
+        <div class="usp-item"><i class="fas fa-shield-alt"></i> 5 Jahre Gewährleistung</div>
+        <div class="usp-item"><i class="fas fa-euro-sign"></i> Transparente Festpreise</div>
+        <div class="usp-item"><i class="fas fa-map-marker-alt"></i> Schnelle Umsetzung vor Ort</div>
+        <!-- Duplicate for seamless loop -->
+        <div class="usp-item"><i class="fas fa-award"></i> Zertifizierter Meisterbetrieb</div>
+        <div class="usp-item"><i class="fas fa-clock"></i> 15+ Jahre Erfahrung</div>
+        <div class="usp-item"><i class="fas fa-leaf"></i> Nachhaltige Materialien</div>
+        <div class="usp-item"><i class="fas fa-star"></i> 500+ begeisterte Kunden</div>
+        <div class="usp-item"><i class="fas fa-phone-alt"></i> Kostenlose Erstberatung</div>
+        <div class="usp-item"><i class="fas fa-shield-alt"></i> 5 Jahre Gewährleistung</div>
+        <div class="usp-item"><i class="fas fa-euro-sign"></i> Transparente Festpreise</div>
+        <div class="usp-item"><i class="fas fa-map-marker-alt"></i> Schnelle Umsetzung vor Ort</div>
+    </div>
+</div>
+
+<!-- ══════════════ NAVIGATION ══════════════ -->
+<nav id="navbar">
+    <div class="nav-container">
+        <a href="#hero" class="logo">
+            <div class="logo-icon"><i class="fas fa-seedling"></i></div>
+            <div class="logo-text">
+                <h2>GRÜNWERK</h2>
+                <span>Garten &amp; Landschaftsbau</span>
+            </div>
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <button class="mobile-close" id="mobileClose"><i class="fas fa-times"></i></button>
+            <li><a href="#leistungen">Leistungen</a></li>
+            <li><a href="#ueber-uns">Über uns</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#referenzen">Referenzen</a></li>
+            <li><a href="#kontakt" class="nav-cta">Jetzt anfragen</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</nav>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section id="hero">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-particles" id="particles"></div>
+
+    <div class="hero-content container" id="heroContent">
+        <div class="hero-badge">
+            <i class="fas fa-award"></i>
+            Zertifizierter Meisterbetrieb · Seit 2008
+        </div>
+        <h1 class="hero-title">
+            Ihr Traumgarten –<br>
+            <span class="highlight">ab sofort Realität.</span>
+        </h1>
+        <p class="hero-subtitle">
+            Meisterhaft realisierte
+            <span class="type-wrap">
+                <span id="typewriter">Gartengestaltung</span><span class="type-cursor"></span>
+            </span>
+            – nachhaltig, präzise und mit echter Leidenschaft.
+        </p>
+        <div class="hero-buttons">
+            <a href="#kontakt" class="btn-primary btn-magnetic">
+                <i class="fas fa-phone-alt"></i>
+                Kostenlose Beratung
+            </a>
+            <a href="#portfolio" class="btn-secondary btn-magnetic">
+                <i class="fas fa-images"></i>
+                Projekte entdecken
+            </a>
+        </div>
+    </div>
+
+    <div class="hero-stats">
+        <div class="hero-stat">
+            <div class="hero-stat-num">15+</div>
+            <div class="hero-stat-label">Jahre Erfahrung</div>
+        </div>
+        <div class="hero-stat">
+            <div class="hero-stat-num">500+</div>
+            <div class="hero-stat-label">Projekte</div>
+        </div>
+        <div class="hero-stat">
+            <div class="hero-stat-num">4.9★</div>
+            <div class="hero-stat-label">Bewertung</div>
+        </div>
+    </div>
+
+    <div class="scroll-indicator">
+        <div class="scroll-line"></div>
+        Entdecken
+    </div>
+</section>
+
+<!-- ══════════════ LEISTUNGEN ══════════════ -->
+<section id="leistungen">
+    <div class="container">
+        <div class="services-header reveal">
+            <div class="section-tag">Was wir bieten</div>
+            <h2 class="section-title">Unsere Leistungen</h2>
+            <p class="section-subtitle">Alles aus einer Hand – von der kreativen Planung bis zur fachgerechten Ausführung. Qualität, die überzeugt und bleibt.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card reveal" style="transition-delay:.05s" data-category="planung">
+                <div class="card-shimmer"></div>
+                <div class="service-card-inner">
+                    <div class="service-icon"><i class="fas fa-drafting-compass"></i></div>
+                    <h3>Gartenplanung &amp; Design</h3>
+                    <p>Individuelle 3D-Planung nach Ihren Wünschen. Wir machen Ihre Ideen sichtbar – noch bevor der erste Spatenstich erfolgt.</p>
+                    <div class="service-arrow">Mehr erfahren <i class="fas fa-arrow-right"></i></div>
+                </div>
+            </div>
+            <div class="service-card reveal" style="transition-delay:.12s">
+                <div class="card-shimmer"></div>
+                <div class="service-card-inner">
+                    <div class="service-icon"><i class="fas fa-home"></i></div>
+                    <h3>Terrassenbau</h3>
+                    <p>Holz, WPC, Naturstein oder Feinsteinzeug – wir bauen Ihre Terrasse als perfekte Erweiterung Ihres Wohnraums im Freien.</p>
+                    <div class="service-arrow">Mehr erfahren <i class="fas fa-arrow-right"></i></div>
+                </div>
+            </div>
+            <div class="service-card reveal" style="transition-delay:.2s">
+                <div class="card-shimmer"></div>
+                <div class="service-card-inner">
+                    <div class="service-icon"><i class="fas fa-road"></i></div>
+                    <h3>Pflasterarbeiten &amp; Wege</h3>
+                    <p>Hochwertige Pflasterflächen, Natursteinwege und Einfahrten – dauerhaft, ästhetisch und werterhöhend für Ihr Grundstück.</p>
+                    <div class="service-arrow">Mehr erfahren <i class="fas fa-arrow-right"></i></div>
+                </div>
+            </div>
+            <div class="service-card reveal" style="transition-delay:.28s">
+                <div class="card-shimmer"></div>
+                <div class="service-card-inner">
+                    <div class="service-icon"><i class="fas fa-tint"></i></div>
+                    <h3>Teich &amp; Wassergarten</h3>
+                    <p>Schwimmteiche, Biotope, Springbrunnen und Wasserläufe – wir bringen die beruhigende Kraft des Wassers in Ihren Garten.</p>
+                    <div class="service-arrow">Mehr erfahren <i class="fas fa-arrow-right"></i></div>
+                </div>
+            </div>
+            <div class="service-card reveal" style="transition-delay:.36s">
+                <div class="card-shimmer"></div>
+                <div class="service-card-inner">
+                    <div class="service-icon"><i class="fas fa-leaf"></i></div>
+                    <h3>Bepflanzung &amp; Rasen</h3>
+                    <p>Fachgerechte Bepflanzung, Rollrasen oder Saatgras – für ein sattgrünes, vitales Fundament das ganze Jahr über.</p>
+                    <div class="service-arrow">Mehr erfahren <i class="fas fa-arrow-right"></i></div>
+                </div>
+            </div>
+            <div class="service-card reveal" style="transition-delay:.44s">
+                <div class="card-shimmer"></div>
+                <div class="service-card-inner">
+                    <div class="service-icon"><i class="fas fa-sync-alt"></i></div>
+                    <h3>Gartenpflege &amp; Wartung</h3>
+                    <p>Regelmäßige Pflege, Baumschnitt, Bewässerungssysteme – wir halten Ihren Garten das ganze Jahr in perfektem Zustand.</p>
+                    <div class="service-arrow">Mehr erfahren <i class="fas fa-arrow-right"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════ ÜBER UNS ══════════════ -->
+<section id="ueber-uns" style="position:relative;overflow:hidden;">
+    <!-- Decorative blobs -->
+    <div class="blob blob-green" style="width:500px;height:500px;top:-120px;right:-100px;animation:blobFloat1 14s ease infinite;"></div>
+    <div class="blob blob-gold"  style="width:350px;height:350px;bottom:-80px;left:-80px;animation:blobFloat2 11s ease infinite;"></div>
+
+    <div class="container" style="position:relative;z-index:2;">
+        <div class="about-grid">
+            <div class="about-images reveal-left">
+                <img class="about-img-main"
+                     src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80"
+                     alt="Unser Team bei der Gartenarbeit" loading="lazy">
+                <img class="about-img-secondary"
+                     src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=400&q=80"
+                     alt="Detailarbeit im Garten" loading="lazy">
+                <div class="about-badge">
+                    <div class="about-badge-icon"><i class="fas fa-medal"></i></div>
+                    <div class="about-badge-text">
+                        <h4>Meisterbetrieb</h4>
+                        <p>Zertifiziert &amp; geprüft</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-content reveal-right">
+                <div class="section-tag">Über uns</div>
+                <h2 class="section-title">Leidenschaft für grüne Lebensräume</h2>
+                <p>Mit über 15 Jahren Erfahrung im Garten- und Landschaftsbau sind wir Ihr verlässlicher Partner für außergewöhnliche Außenanlagen. Als zertifizierter Meisterbetrieb verbinden wir handwerkliche Perfektion mit kreativem Design und natürlichem Feingefühl.</p>
+                <p>Unser Team aus erfahrenen Garten- und Landschaftsbaumeistern, Technikern und Pflegespezialisten arbeitet mit modernsten Maschinen und sorgfältig ausgewählten Materialien – stets im Einklang mit der Natur und Ihren persönlichen Wünschen.</p>
+                <div class="about-features">
+                    <div class="about-feature">
+                        <div class="about-feature-icon"><i class="fas fa-check"></i></div>
+                        Kostenlose Erstberatung
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon"><i class="fas fa-check"></i></div>
+                        3D-Visualisierung
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon"><i class="fas fa-check"></i></div>
+                        Zertifizierter Meisterbetrieb
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon"><i class="fas fa-check"></i></div>
+                        5 Jahre Gewährleistung
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon"><i class="fas fa-check"></i></div>
+                        Nachhaltige Materialien
+                    </div>
+                    <div class="about-feature">
+                        <div class="about-feature-icon"><i class="fas fa-check"></i></div>
+                        Transparente Festpreise
+                    </div>
+                </div>
+                <a href="#kontakt" class="btn-primary btn-magnetic" style="display:inline-flex;">
+                    <i class="fas fa-phone-alt"></i>
+                    Jetzt kostenlos beraten lassen
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════ STATS ══════════════ -->
+<section id="stats">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item reveal" style="transition-delay:.05s">
+                <div class="stat-icon"><i class="fas fa-calendar-check"></i></div>
+                <div class="stat-number"><span class="counter" data-target="15">0</span><span>+</span></div>
+                <div class="stat-label">Jahre Erfahrung</div>
+            </div>
+            <div class="stat-item reveal" style="transition-delay:.15s">
+                <div class="stat-icon"><i class="fas fa-project-diagram"></i></div>
+                <div class="stat-number"><span class="counter" data-target="500">0</span><span>+</span></div>
+                <div class="stat-label">Abgeschlossene Projekte</div>
+            </div>
+            <div class="stat-item reveal" style="transition-delay:.25s">
+                <div class="stat-icon"><i class="fas fa-smile-beam"></i></div>
+                <div class="stat-number"><span class="counter" data-target="480">0</span><span>+</span></div>
+                <div class="stat-label">Begeisterte Kunden</div>
+            </div>
+            <div class="stat-item reveal" style="transition-delay:.35s">
+                <div class="stat-icon"><i class="fas fa-users"></i></div>
+                <div class="stat-number"><span class="counter" data-target="12">0</span></div>
+                <div class="stat-label">Fachkräfte im Team</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════ WARUM WIR ══════════════ -->
+<section id="warum-wir">
+    <div class="container">
+        <div class="why-header reveal">
+            <div class="section-tag">Ihr Vorteil</div>
+            <h2 class="section-title" style="color:#fff;">Warum Kunden uns vertrauen</h2>
+        </div>
+        <div class="why-grid">
+            <div class="why-item reveal" style="transition-delay:.05s">
+                <div class="why-icon"><i class="fas fa-cube"></i></div>
+                <h3>3D-Planung inklusive</h3>
+                <p>Sehen Sie Ihren Traumgarten schon vor dem ersten Spatenstich – fotorealistisch und maßgetreu visualisiert.</p>
+            </div>
+            <div class="why-item reveal" style="transition-delay:.15s">
+                <div class="why-icon"><i class="fas fa-lock"></i></div>
+                <h3>Festpreisgarantie</h3>
+                <p>Keine versteckten Kosten, keine bösen Überraschungen. Der vereinbarte Preis ist der Endpreis.</p>
+            </div>
+            <div class="why-item reveal" style="transition-delay:.25s">
+                <div class="why-icon"><i class="fas fa-bolt"></i></div>
+                <h3>Schnelle Umsetzung</h3>
+                <p>Eingespieltes Team und moderner Maschinenpark: Projekte realisieren wir schnell, sauber und termingerecht.</p>
+            </div>
+            <div class="why-item reveal" style="transition-delay:.35s">
+                <div class="why-icon"><i class="fas fa-recycle"></i></div>
+                <h3>Nachhaltig &amp; regional</h3>
+                <p>Wir setzen auf lokale Materialien und ökologische Lösungen – gut für Ihren Garten und die Umwelt.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════ PROZESS ══════════════ -->
+<section id="prozess">
+    <div class="container">
+        <div class="process-header reveal">
+            <div class="section-tag">Unser Vorgehen</div>
+            <h2 class="section-title">In 4 Schritten zum Traumgarten</h2>
+            <p class="section-subtitle">Transparent, zuverlässig und ohne unangenehme Überraschungen – so arbeiten wir für Sie.</p>
+        </div>
+        <div class="process-timeline">
+            <div class="process-step reveal" style="transition-delay:.05s">
+                <div class="step-number"><span class="step-num-text">01</span></div>
+                <h3>Erstberatung</h3>
+                <p>Kostenloser Termin vor Ort. Wir hören zu, analysieren Ihr Grundstück und erfassen alle Ihre Wünsche.</p>
+            </div>
+            <div class="process-step reveal" style="transition-delay:.15s">
+                <div class="step-number"><span class="step-num-text">02</span></div>
+                <h3>3D-Planung</h3>
+                <p>Individuelle Visualisierung, detailliertes Angebot mit Festpreisgarantie und verbindlichem Zeitplan.</p>
+            </div>
+            <div class="process-step reveal" style="transition-delay:.25s">
+                <div class="step-number"><span class="step-num-text">03</span></div>
+                <h3>Ausführung</h3>
+                <p>Professionelle Umsetzung durch unser Fachteam – pünktlich, ordentlich und mit höchster Sorgfalt.</p>
+            </div>
+            <div class="process-step reveal" style="transition-delay:.35s">
+                <div class="step-number"><span class="step-num-text">04</span></div>
+                <h3>Übergabe &amp; Pflege</h3>
+                <p>Persönliche Einweisung, Übergabe-Protokoll und auf Wunsch Pflegevertrag für dauerhafte Schönheit.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════ VORHER / NACHHER ══════════════ -->
+<section id="vorher-nachher">
+    <!-- Blobs -->
+    <div class="ba-blobs">
+        <div class="blob blob-gold"  style="width:400px;height:400px;top:-50px;right:-80px;animation:blobFloat2 13s ease infinite;"></div>
+        <div class="blob blob-green" style="width:350px;height:350px;bottom:-60px;left:-70px;animation:blobFloat1 10s ease infinite;"></div>
+    </div>
+
+    <div class="container" style="position:relative;z-index:2;">
+        <div class="ba-header reveal">
+            <div class="section-tag">Transformation</div>
+            <h2 class="section-title">Vorher &amp; Nachher</h2>
+            <p class="section-subtitle">Ziehen Sie den Regler und sehen Sie den Unterschied selbst.</p>
+        </div>
+
+        <div class="ba-wrap reveal">
+            <div class="ba-container">
+                <!-- After (background, full) -->
+                <img class="ba-img"
+                     src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=85"
+                     alt="Nachher: Fertig gestalteter Garten" loading="lazy">
+
+                <!-- Before (clipped overlay) -->
+                <div class="ba-before">
+                    <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&q=85"
+                         alt="Vorher: Ungepflegter Garten" loading="lazy">
+                </div>
+
+                <!-- Labels -->
+                <span class="ba-label ba-label-before">Vorher</span>
+                <span class="ba-label ba-label-after">Nachher</span>
+
+                <!-- Handle -->
+                <div class="ba-handle">
+                    <div class="ba-circle">
+                        <i class="fas fa-chevron-left"></i>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+            <p class="ba-hint">
+                <i class="fas fa-hand-pointer"></i>
+                Regler ziehen um Vorher/Nachher zu vergleichen
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════ PORTFOLIO ══════════════ -->
+<section id="portfolio">
+    <div class="container">
+        <div class="portfolio-header reveal">
+            <div class="section-tag">Unsere Arbeiten</div>
+            <h2 class="section-title">Ausgewählte Projekte</h2>
+            <p class="section-subtitle">Lassen Sie sich von unseren realisierten Projekten inspirieren – jedes ein Unikat.</p>
+        </div>
+        <div class="portfolio-filter reveal">
+            <button class="filter-btn active" data-filter="all">Alle Projekte</button>
+            <button class="filter-btn" data-filter="garten">Gartengestaltung</button>
+            <button class="filter-btn" data-filter="terrasse">Terrassenbau</button>
+            <button class="filter-btn" data-filter="wasser">Wasseranlagen</button>
+            <button class="filter-btn" data-filter="pflaster">Pflasterarbeiten</button>
+        </div>
+        <div class="portfolio-grid">
+            <div class="portfolio-item reveal" data-category="garten" style="transition-delay:.05s">
+                <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80" alt="Mediterraner Garten" loading="lazy">
+                <div class="portfolio-icon"><i class="fas fa-expand-alt"></i></div>
+                <div class="portfolio-overlay">
+                    <div class="portfolio-info"><h3>Mediterraner Garten</h3><p>Gartengestaltung · München</p></div>
+                </div>
+            </div>
+            <div class="portfolio-item reveal" data-category="terrasse" style="transition-delay:.12s">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Naturstein Terrasse" loading="lazy">
+                <div class="portfolio-icon"><i class="fas fa-expand-alt"></i></div>
+                <div class="portfolio-overlay">
+                    <div class="portfolio-info"><h3>Naturstein Terrasse</h3><p>Terrassenbau · Augsburg</p></div>
+                </div>
+            </div>
+            <div class="portfolio-item reveal" data-category="wasser" style="transition-delay:.2s">
+                <img src="https://images.unsplash.com/photo-1562184552-997c461abbe6?w=600&q=80" alt="Schwimmteich" loading="lazy">
+                <div class="portfolio-icon"><i class="fas fa-expand-alt"></i></div>
+                <div class="portfolio-overlay">
+                    <div class="portfolio-info"><h3>Schwimmteich mit Naturzone</h3><p>Wasseranlage · Landsberg</p></div>
+                </div>
+            </div>
+            <div class="portfolio-item reveal" data-category="pflaster" style="transition-delay:.28s">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Einfahrt gepflastert" loading="lazy">
+                <div class="portfolio-icon"><i class="fas fa-expand-alt"></i></div>
+                <div class="portfolio-overlay">
+                    <div class="portfolio-info"><h3>Einfahrt &amp; Vorgartengestaltung</h3><p>Pflasterarbeiten · Starnberg</p></div>
+                </div>
+            </div>
+            <div class="portfolio-item reveal" data-category="garten" style="transition-delay:.36s">
+                <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=600&q=80" alt="Staudengarten" loading="lazy">
+                <div class="portfolio-icon"><i class="fas fa-expand-alt"></i></div>
+                <div class="portfolio-overlay">
+                    <div class="portfolio-info"><h3>Üppiger Staudengarten</h3><p>Bepflanzung · Dachau</p></div>
+                </div>
+            </div>
+            <div class="portfolio-item reveal" data-category="terrasse" style="transition-delay:.44s">
+                <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=600&q=80" alt="WPC Terrasse" loading="lazy">
+                <div class="portfolio-icon"><i class="fas fa-expand-alt"></i></div>
+                <div class="portfolio-overlay">
+                    <div class="portfolio-info"><h3>Thermoholz Lounge-Terrasse</h3><p>Terrassenbau · München</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════ REFERENZEN ══════════════ -->
+<section id="referenzen">
+    <div class="container">
+        <div class="testimonials-header reveal">
+            <div class="section-tag">Kundenstimmen</div>
+            <h2 class="section-title">Was unsere Kunden sagen</h2>
+            <p class="section-subtitle">Über 480 zufriedene Kunden sprechen für sich.</p>
+        </div>
+        <div class="testimonials-slider reveal">
+            <div class="testimonials-track" id="testimonialsTrack">
+                <div class="testimonial-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="testimonial-text">„GRÜNWERK hat unseren verwilderten Garten in ein absolutes Traumparadies verwandelt. Die Beratung war erstklassig, die Ausführung top und der Preis absolut fair. Wir würden sofort wieder buchen!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SM</div>
+                        <div class="author-info"><h4>Sandra M.</h4><p>München · Gartengestaltung</p></div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="testimonial-text">„Unsere Terrasse ist ein Kunstwerk! Das Team war pünktlich, sauber und unglaublich professionell. Die 3D-Planung hat uns geholfen, uns das Ergebnis perfekt vorzustellen. Absolute Empfehlung!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">TK</div>
+                        <div class="author-info"><h4>Thomas K.</h4><p>Augsburg · Terrassenbau</p></div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="testimonial-text">„Der Schwimmteich wird von der ganzen Familie geliebt! Das Team hat unsere kühnsten Erwartungen übertroffen. Herr Müller nimmt sich wirklich Zeit – Profis durch und durch!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">LH</div>
+                        <div class="author-info"><h4>Lisa H.</h4><p>Starnberg · Teichbau</p></div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="testimonial-text">„Von der Einfahrt bis zum Garten – alles perfekt gepflastert. Unkomplizierte Zusammenarbeit, transparente Kommunikation, begeisterte Nachbarn. Ein super Team!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MR</div>
+                        <div class="author-info"><h4>Martin R.</h4><p>Landsberg · Pflasterarbeiten</p></div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="testimonial-text">„Ich kann GRÜNWERK nur wärmstens empfehlen! Das Team ist herzlich, kompetent und zuverlässig. Unser Garten ist jetzt unser absoluter Lieblingsort."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AW</div>
+                        <div class="author-info"><h4>Anna W.</h4><p>Dachau · Komplettgestaltung</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-controls">
+            <button class="slider-btn" id="prevBtn" aria-label="Zurück"><i class="fas fa-arrow-left"></i></button>
+            <div class="slider-dots" id="sliderDots"></div>
+            <button class="slider-btn" id="nextBtn" aria-label="Weiter"><i class="fas fa-arrow-right"></i></button>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════ KONTAKT ══════════════ -->
+<section id="kontakt" style="position:relative;overflow:hidden;">
+    <div class="blob blob-green" style="width:450px;height:450px;top:-80px;right:-100px;opacity:.05;animation:blobFloat1 12s ease infinite;"></div>
+    <div class="blob blob-gold"  style="width:300px;height:300px;bottom:-60px;left:-60px;opacity:.04;animation:blobFloat2 9s ease infinite;"></div>
+
+    <div class="container" style="position:relative;z-index:2;">
+        <div class="contact-grid">
+            <div class="contact-info reveal-left">
+                <div class="section-tag">Kontakt</div>
+                <h2 class="section-title">Starten wir Ihr Projekt</h2>
+                <p>Bereit für Ihren Traumgarten? Kontaktieren Sie uns für eine kostenlose und unverbindliche Erstberatung. Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
+                <div class="contact-items">
+                    <div class="contact-item">
+                        <div class="contact-item-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="contact-item-text"><h4>Telefon</h4><p>+49 (0) 89 123 456 789</p></div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-item-text"><h4>E-Mail</h4><p>info@gruenwerk-garten.de</p></div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="contact-item-text"><h4>Adresse</h4><p>Musterstraße 42<br>80331 München</p></div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon"><i class="fas fa-clock"></i></div>
+                        <div class="contact-item-text"><h4>Öffnungszeiten</h4><p>Mo–Fr 7:00–18:00 Uhr<br>Sa 8:00–14:00 Uhr</p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form reveal-right">
+                <div id="formContent">
+                    <h3 style="font-size:21px;font-weight:700;margin-bottom:7px;">Kostenlose Beratung anfragen</h3>
+                    <p style="color:var(--gray);font-size:14px;margin-bottom:26px;">Füllen Sie das Formular aus – wir melden uns schnellstmöglich.</p>
+                    <form id="contactForm" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Vorname *</label>
+                                <input type="text" placeholder="Max" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Nachname *</label>
+                                <input type="text" placeholder="Mustermann" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>E-Mail *</label>
+                                <input type="email" placeholder="max@beispiel.de" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Telefon</label>
+                                <input type="tel" placeholder="+49 89 ...">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Gewünschte Leistung *</label>
+                            <select required>
+                                <option value="">Bitte wählen …</option>
+                                <option>Gartenplanung &amp; Design</option>
+                                <option>Terrassenbau</option>
+                                <option>Pflasterarbeiten</option>
+                                <option>Teich &amp; Wassergarten</option>
+                                <option>Bepflanzung &amp; Rasen</option>
+                                <option>Gartenpflege &amp; Wartung</option>
+                                <option>Sonstiges</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Ihre Nachricht *</label>
+                            <textarea placeholder="Beschreiben Sie kurz Ihr Projekt und Ihre Wünsche …" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">
+                            <i class="fas fa-paper-plane"></i>
+                            Anfrage jetzt absenden
+                        </button>
+                    </form>
+                </div>
+                <div class="form-success" id="formSuccess">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Vielen Dank!</h3>
+                    <p>Ihre Anfrage wurde erfolgreich übermittelt.<br>Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════ WHATSAPP FLOAT ══════════════ -->
+<div class="wa-float">
+    <span class="wa-tooltip">Direkt schreiben!</span>
+    <a href="https://wa.me/4989123456789" class="wa-btn" target="_blank" rel="noopener" aria-label="WhatsApp Chat">
+        <div class="wa-pulse"></div>
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</div>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="#hero" class="logo" style="margin-bottom:4px;display:inline-flex;">
+                    <div class="logo-icon"><i class="fas fa-seedling"></i></div>
+                    <div class="logo-text"><h2>GRÜNWERK</h2><span>Garten &amp; Landschaftsbau</span></div>
+                </a>
+                <p>Ihr zuverlässiger Meisterbetrieb für professionellen Garten- und Landschaftsbau. Wir schaffen grüne Lebensräume, die begeistern – seit 2008.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Leistungen</h4>
+                <ul class="footer-links">
+                    <li><a href="#leistungen"><i class="fas fa-angle-right"></i> Gartenplanung</a></li>
+                    <li><a href="#leistungen"><i class="fas fa-angle-right"></i> Terrassenbau</a></li>
+                    <li><a href="#leistungen"><i class="fas fa-angle-right"></i> Pflasterarbeiten</a></li>
+                    <li><a href="#leistungen"><i class="fas fa-angle-right"></i> Teich &amp; Wasser</a></li>
+                    <li><a href="#leistungen"><i class="fas fa-angle-right"></i> Bepflanzung</a></li>
+                    <li><a href="#leistungen"><i class="fas fa-angle-right"></i> Gartenpflege</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Unternehmen</h4>
+                <ul class="footer-links">
+                    <li><a href="#ueber-uns"><i class="fas fa-angle-right"></i> Über uns</a></li>
+                    <li><a href="#prozess"><i class="fas fa-angle-right"></i> So arbeiten wir</a></li>
+                    <li><a href="#portfolio"><i class="fas fa-angle-right"></i> Portfolio</a></li>
+                    <li><a href="#referenzen"><i class="fas fa-angle-right"></i> Referenzen</a></li>
+                    <li><a href="#kontakt"><i class="fas fa-angle-right"></i> Jobs</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Kontakt</h4>
+                <ul class="footer-links">
+                    <li><a href="tel:+4989123456789"><i class="fas fa-phone-alt"></i> +49 89 123 456 789</a></li>
+                    <li><a href="mailto:info@gruenwerk-garten.de"><i class="fas fa-envelope"></i> info@gruenwerk.de</a></li>
+                    <li><a href="#kontakt"><i class="fas fa-map-marker-alt"></i> München &amp; Umgebung</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 GRÜNWERK Garten &amp; Landschaftsbau. Alle Rechte vorbehalten.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Impressum</a>
+                <a href="#">Datenschutz</a>
+                <a href="#">AGB</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- ══════════════ LIGHTBOX ══════════════ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+    <div class="lightbox-close" onclick="closeLightbox()"><i class="fas fa-times"></i></div>
+    <img id="lightboxImg" src="" alt="Vergrößertes Projektbild">
+</div>
+
+<!-- ══════════════ COOKIE BANNER ══════════════ -->
+<div class="cookie-banner" id="cookieBanner">
+    <p>Wir verwenden Cookies, um Ihnen das beste Erlebnis auf unserer Website zu bieten. <a href="#">Mehr erfahren</a></p>
+    <button class="cookie-accept" onclick="acceptCookies()">Akzeptieren &amp; Schließen</button>
+</div>
+
+<!-- Scripts -->
+<script src="js/effects.js"></script>
+<script src="js/ui.js"></script>
+</body>
+</html>
