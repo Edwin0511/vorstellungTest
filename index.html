@@ -103,26 +103,48 @@
 </header>
 
 <!-- ════════════════════════════════════
-     HERO
+     HERO  (Scroll Expand Effect)
 ════════════════════════════════════ -->
 <section id="hero">
+
+    <!-- Background: fades out as image expands -->
     <div id="heroBg" class="hero-bg">
-        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1920&q=85&auto=format&fit=crop" alt="Gartenlandschaft" loading="eager">
+        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1920&q=85&auto=format&fit=crop" alt="" loading="eager" aria-hidden="true">
         <div class="hero-overlay"></div>
     </div>
 
     <div id="particles" class="hero-particles"></div>
 
-    <div id="heroContent" class="hero-content">
-        <div class="hero-badge reveal">
+    <!-- ── Scroll Expand Zone ── -->
+    <div class="se-zone">
+
+        <!-- Title words — split left/right as image expands -->
+        <div class="se-headline" aria-hidden="true">
+            <span id="seTitleA" class="se-title-a">Ihr Garten.</span>
+            <span id="seTitleB" class="se-title-b">Unser Meisterwerk.</span>
+        </div>
+
+        <!-- The expanding image card -->
+        <div id="seMedia" class="se-media">
+            <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1400&q=90&auto=format&fit=crop" alt="Traumgarten" loading="eager">
+            <div id="seVeil" class="se-veil"></div>
+            <div id="seHints" class="se-hints">
+                <span>Meisterbetrieb &middot; Seit 1998</span>
+                <span class="se-hint-scroll">&#8595;&nbsp;Scrollen</span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Hero content — fades in after full expansion -->
+    <div id="heroContent" class="hero-content se-content">
+        <div class="hero-badge">
             <span class="badge-dot"></span>
             <span>Premium Garten &amp; Landschaftsbau &middot; Seit 1998</span>
         </div>
 
-        <h1 class="hero-headline">
-            <span class="headline-line" data-delay="0">Ihr Garten.</span>
-            <span class="headline-line headline-italic" data-delay="0.15">Unser</span>
-            <span class="headline-line headline-gold" data-delay="0.3">Meisterwerk.</span>
+        <h1 class="se-hero-headline">
+            Ihr Garten.<br><em>Unser Meisterwerk.</em>
         </h1>
 
         <p class="hero-sub">
@@ -158,12 +180,14 @@
         </div>
     </div>
 
-    <a href="#leistungen" class="scroll-indicator" aria-label="Nach unten scrollen">
+    <!-- Scroll-down indicator (hidden until expansion complete) -->
+    <a href="#leistungen" class="scroll-indicator" id="seScrollDown" aria-label="Nach unten scrollen">
         <div class="scroll-mouse">
             <div class="scroll-wheel"></div>
         </div>
         <span>Entdecken</span>
     </a>
+
 </section>
 
 <!-- ════════════════════════════════════

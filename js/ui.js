@@ -64,29 +64,49 @@ setTimeout(() => {
     document.querySelectorAll('.split-ready').forEach(el => revealObs.observe(el));
 }, 150);
 
-/* ── Animated Counters ── */
+/* ── Scramble Counter (from 21st.dev AnimatedNumber pattern) ── */
+function scrambleCounter(el) {
+    const target = +el.dataset.target;
+    const STEPS  = 20;
+    const DELAY  = 60;
+    let   step   = 0;
+
+    el.textContent = '0';
+    el.classList.add('scrambling');
+
+    const run = setInterval(() => {
+        step++;
+        if (step < STEPS) {
+            /* Converging random values — base climbs toward target */
+            const t     = step / STEPS;
+            const base  = Math.floor(t * target * 0.8);
+            const noise = Math.floor(Math.random() * target * (1 - t) * 0.5);
+            el.textContent = base + noise;
+        } else {
+            el.textContent = target;
+            el.classList.remove('scrambling');
+            clearInterval(run);
+        }
+    }, DELAY);
+}
+
 const counterObs = new IntersectionObserver(entries => {
     entries.forEach(e => {
         if (!e.isIntersecting) return;
-        const el     = e.target;
-        const target = +el.dataset.target;
-        const dur    = 1800;
-        const start  = performance.now();
-
-        function step(now) {
-            const elapsed  = now - start;
-            const progress = Math.min(elapsed / dur, 1);
-            const eased    = 1 - Math.pow(1 - progress, 3);
-            el.textContent = Math.floor(eased * target);
-            if (progress < 1) requestAnimationFrame(step);
-            else el.textContent = target;
-        }
-        requestAnimationFrame(step);
-        counterObs.unobserve(el);
+        scrambleCounter(e.target);
+        counterObs.unobserve(e.target);
     });
-}, { threshold: 0.5 });
+}, { threshold: 0.4 });
 
 document.querySelectorAll('.counter').forEach(el => counterObs.observe(el));
+
+/* ── Portfolio Group Hover ── */
+document.querySelectorAll('.portfolio-grid').forEach(grid => {
+    grid.querySelectorAll('.portfolio-item').forEach(item => {
+        item.addEventListener('mouseenter', () => grid.classList.add('group-hover'));
+        item.addEventListener('mouseleave', () => grid.classList.remove('group-hover'));
+    });
+});
 
 /* ── Testimonials Slider ── */
 (function initSlider() {

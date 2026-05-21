@@ -960,6 +960,8 @@
     grid-auto-rows: 280px;
     gap: 16px;
     margin-bottom: 56px;
+    perspective: 1200px;
+    perspective-origin: center 40%;
 }
 
 .portfolio-item {
@@ -967,6 +969,9 @@
     border-radius: var(--radius);
     overflow: hidden;
     cursor: pointer;
+    transition: transform .5s cubic-bezier(.4,0,.2,1), opacity .45s ease, filter .45s ease, box-shadow .5s ease;
+    transform: translateZ(0);
+    will-change: transform;
 }
 .portfolio-item.large {
     grid-column: span 2;
@@ -1001,6 +1006,21 @@
     transition: opacity .4s ease;
 }
 .portfolio-item:hover .portfolio-overlay { opacity: 1; }
+
+/* ── Group hover: 3D depth + dim non-hovered items ── */
+.portfolio-grid.group-hover .portfolio-item {
+    opacity: .4;
+    filter: blur(2.5px) saturate(.5);
+    transform: translateZ(-30px) scale(.96);
+    box-shadow: none;
+}
+.portfolio-grid.group-hover .portfolio-item:hover {
+    opacity: 1;
+    filter: none;
+    transform: translateZ(50px) translateY(-10px) scale(1.03);
+    box-shadow: 0 40px 80px rgba(0,0,0,.55);
+    z-index: 5;
+}
 
 .portfolio-info { flex: 1; }
 .portfolio-cat {
@@ -1962,3 +1982,163 @@
 ════════════════════════ */
 .section-dark  > .container { position: relative; }
 .section-light > .container { position: relative; }
+
+/* ════════════════════════════════════
+   SCROLL EXPAND HERO
+   Ported from 21st.dev ScrollExpandMedia
+════════════════════════════════════ */
+
+/* Container that holds title + expanding card */
+.se-zone {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* ── Flanking headline ── */
+.se-headline {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    z-index: 4;
+    pointer-events: none;
+    padding: 0 20px;
+}
+
+.se-title-a,
+.se-title-b {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 6.5vw, 7.5rem);
+    font-weight: 900;
+    color: var(--white);
+    text-shadow: 0 4px 40px rgba(0,0,0,.55);
+    white-space: nowrap;
+    line-height: 1;
+    will-change: transform;
+}
+.se-title-b {
+    color: var(--gold);
+    font-style: italic;
+    font-weight: 700;
+}
+
+/* ── Expanding media card ── */
+.se-media {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 30px 80px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.06);
+    will-change: width, height, border-radius;
+    pointer-events: auto;
+}
+.se-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* Dark veil over the media card */
+.se-veil {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 26, 13, 0.55);
+    pointer-events: none;
+    will-change: opacity;
+    z-index: 1;
+}
+
+/* Hint text at bottom of card */
+.se-hints {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    background: linear-gradient(to top, rgba(0,0,0,.55) 0%, transparent 100%);
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.72);
+    pointer-events: none;
+    will-change: opacity;
+}
+.se-hint-scroll {
+    color: var(--gold-light);
+}
+
+/* ── Hero content: hidden until expansion complete ── */
+.se-content {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(16px);
+    transition: opacity .9s cubic-bezier(.4,0,.2,1), transform .9s cubic-bezier(.4,0,.2,1);
+    z-index: 5;
+}
+.se-content.se-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+/* Ensure all text in revealed content is legible over image */
+.se-content .hero-badge {
+    text-shadow: 0 2px 12px rgba(0,0,0,.6);
+}
+.se-content .hero-sub {
+    color: rgba(255,255,255,.92);
+    text-shadow: 0 2px 20px rgba(0,0,0,.7), 0 1px 4px rgba(0,0,0,.9);
+}
+.se-content .hero-stat strong {
+    text-shadow: 0 2px 16px rgba(0,0,0,.7);
+}
+.se-content .hero-stat span {
+    text-shadow: 0 1px 8px rgba(0,0,0,.8);
+}
+
+/* Headline inside the revealed hero content */
+.se-hero-headline {
+    font-family: var(--font-heading);
+    font-size: clamp(2.6rem, 5vw, 5rem);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 30px rgba(0,0,0,.4);
+    display: none; /* hidden — title shown via se-headline during expansion, then hidden too */
+}
+
+/* Scroll-down arrow hidden until expanded */
+#seScrollDown {
+    opacity: 0;
+    transition: opacity .6s ease .4s;
+}
+#seScrollDown.se-visible {
+    opacity: 1;
+}
+
+/* ── Mobile adjustments ── */
+@media (max-width: 600px) {
+    .se-title-a, .se-title-b {
+        font-size: clamp(2.2rem, 10vw, 3.8rem);
+    }
+}

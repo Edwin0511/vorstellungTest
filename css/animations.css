@@ -147,3 +147,19 @@
     pointer-events: none;
     animation: rippleAnim .68s ease-out forwards;
 }
+
+/* ── Counter scramble flash ── */
+@keyframes counterFlash {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: .55; }
+}
+.counter.scrambling { animation: counterFlash .13s linear infinite; }
+
+/* ── Text Scramble label ── */
+.section-label { transition: opacity .3s ease; }
+
+/* ── About image parallax wrapper ── */
+.about-img-main img {
+    will-change: transform;
+    transition: none !important;
+}

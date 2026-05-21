@@ -89,10 +89,8 @@ address {
 ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--gold-light); }
 
-/* Hide default cursor on pointer devices */
-@media (pointer: fine) {
-    html, body, * { cursor: none !important; }
-}
+/* Custom cursor elements hidden — default cursor active */
+#cursorDot, #cursorRing { display: none !important; }
 
 /* Selection */
 ::selection {

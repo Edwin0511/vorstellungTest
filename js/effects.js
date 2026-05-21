@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════
    GRÜNWERK – Visual Effects
-   Preloader · Cursor · Particles · Parallax
+   Preloader · Cursor · Particles · ScrollExpand
    Typewriter · Magnetic · Ripple · Tilt · Split
 ═══════════════════════════════════════════ */
 
@@ -11,42 +11,7 @@ window.addEventListener('load', () => {
     setTimeout(() => {
         pl.classList.add('hide');
         setTimeout(() => { pl.style.display = 'none'; }, 800);
-    }, 2200);
-});
-
-/* ── Animate hero headline on load ── */
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        const h = document.querySelector('.hero-headline');
-        if (h) h.classList.add('animated');
-    }, 2400);
-    setTimeout(() => {
-        document.querySelectorAll('.hero-content .reveal, .hero-content .hero-badge').forEach((el, i) => {
-            setTimeout(() => el.classList.add('visible'), i * 150);
-        });
-        const heroSub = document.querySelector('.hero-sub');
-        if (heroSub) heroSub.style.opacity = '1';
-        const heroActs = document.querySelector('.hero-actions');
-        if (heroActs) {
-            heroActs.style.opacity = '0';
-            heroActs.style.transform = 'translateY(20px)';
-            heroActs.style.transition = 'opacity .7s ease .1s, transform .7s ease .1s';
-            setTimeout(() => {
-                heroActs.style.opacity = '1';
-                heroActs.style.transform = 'translateY(0)';
-            }, 2700);
-        }
-        const heroStats = document.querySelector('.hero-stats');
-        if (heroStats) {
-            heroStats.style.opacity = '0';
-            heroStats.style.transform = 'translateY(20px)';
-            heroStats.style.transition = 'opacity .7s ease .25s, transform .7s ease .25s';
-            setTimeout(() => {
-                heroStats.style.opacity = '1';
-                heroStats.style.transform = 'translateY(0)';
-            }, 2900);
-        }
-    }, 2200);
+    }, 2000);
 });
 
 /* ── Custom Cursor ── */
@@ -74,7 +39,7 @@ window.addEventListener('load', () => {
         requestAnimationFrame(animateRing);
     })();
 
-    const hoverTargets = 'a, button, .service-card, .portfolio-item, .filter-btn, .slider-btn, .sd-dot, .ba-container, .testimonial-card, .usp-card';
+    const hoverTargets = 'a, button, .service-card, .portfolio-item, .filter-btn, .slider-btn, .sd-dot, .ba-container, .testimonial-card, .usp-card, .se-media';
     document.querySelectorAll(hoverTargets).forEach(el => {
         el.addEventListener('mouseenter', () => { dot.classList.add('hovered'); ring.classList.add('hovered'); });
         el.addEventListener('mouseleave', () => { dot.classList.remove('hovered'); ring.classList.remove('hovered'); });
@@ -95,13 +60,14 @@ window.addEventListener('load', () => {
     const container = document.getElementById('particles');
     if (!container) return;
 
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 28; i++) {
         const p = document.createElement('div');
         p.className = 'particle';
         const size   = Math.random() * 6 + 3;
         const isGold = Math.random() > .45;
         const opacity = Math.floor(Math.random() * 4 + 1);
         p.style.cssText = `
+            position:absolute;
             left:${Math.random() * 100}%;
             width:${size}px; height:${size}px;
             border-radius:50%;
@@ -112,18 +78,155 @@ window.addEventListener('load', () => {
     }
 })();
 
-/* ── Hero Parallax: scroll + mouse ── */
+/* ════════════════════════════════════
+   SCROLL EXPAND HERO
+   Inspired by 21st.dev ScrollExpandMedia
+   — vanilla JS port for this project —
+════════════════════════════════════ */
+(function initScrollExpand() {
+    const heroBg    = document.getElementById('heroBg');
+    const media     = document.getElementById('seMedia');
+    const titleA    = document.getElementById('seTitleA');
+    const titleB    = document.getElementById('seTitleB');
+    const veil      = document.getElementById('seVeil');
+    const hints     = document.getElementById('seHints');
+    const content   = document.getElementById('heroContent');
+    const scrollInd = document.getElementById('seScrollDown');
+
+    if (!media || !content) return;
+
+    let progress  = 0;
+    let expanded  = false;
+    let touchStartY = 0;
+    let animFrameId = null;
+
+    const isMobile = () => window.innerWidth < 768;
+
+    /* Apply all visual changes for a given progress (0→1) */
+    function setProgress(p) {
+        progress = Math.max(0, Math.min(1, p));
+
+        const vw  = window.innerWidth;
+        const vh  = window.innerHeight;
+        const mob = isMobile();
+
+        /* ── Media card: small → full viewport ── */
+        const startW  = mob ? 240 : 310;
+        const startH  = mob ? 340 : 450;
+        const mediaW  = startW + progress * (vw  - startW);
+        const mediaH  = startH + progress * (vh  - startH);
+        const radius  = Math.round(20 * (1 - progress));
+
+        media.style.width        = mediaW + 'px';
+        media.style.height       = mediaH + 'px';
+        media.style.borderRadius = radius + 'px';
+
+        /* ── Background: fade to nearly black ── */
+        if (heroBg) heroBg.style.opacity = String(1 - progress);
+
+        /* ── Title: slide completely off screen (100vw guarantees all resolutions) ── */
+        const slide = progress * 100; // vw — same for mobile and desktop
+        if (titleA) titleA.style.transform = `translateX(-${slide}vw)`;
+        if (titleB) titleB.style.transform = `translateX(${slide}vw)`;
+
+        /* ── Veil over card: stay dark enough for content readability ── */
+        const veilOp = Math.max(0.52, 0.75 - progress * 0.23);
+        if (veil) veil.style.opacity = String(veilOp);
+
+        /* ── Hints: fade out quickly ── */
+        const hintOp = Math.max(0, 1 - progress * 3.5);
+        if (hints) hints.style.opacity = String(hintOp);
+
+        /* ── Content & scroll indicator: reveal at end ── */
+        if (progress >= 1) {
+            content.classList.add('se-visible');
+            if (scrollInd) scrollInd.classList.add('se-visible');
+        } else if (progress < 0.82) {
+            content.classList.remove('se-visible');
+            if (scrollInd) scrollInd.classList.remove('se-visible');
+        }
+    }
+
+    /* ── Wheel handler ── */
+    function handleWheel(e) {
+        if (expanded) {
+            /* Allow collapse when scrolling up at the very top of page */
+            if (e.deltaY < 0 && window.scrollY <= 2) {
+                e.preventDefault();
+                expanded = false;
+                /* Animate back smoothly */
+                smoothCollapseBy(0.025);
+            }
+            /* Otherwise: let normal scroll happen */
+            return;
+        }
+        /* Not yet expanded: intercept and drive progress */
+        e.preventDefault();
+        const delta = e.deltaY * 0.00085;
+        const newP  = progress + delta;
+        setProgress(newP);
+        if (progress >= 1) expanded = true;
+    }
+
+    /* ── Touch handlers ── */
+    function handleTouchStart(e) {
+        touchStartY = e.touches[0].clientY;
+    }
+
+    function handleTouchMove(e) {
+        if (!touchStartY) return;
+        const currentY = e.touches[0].clientY;
+        const deltaY   = touchStartY - currentY; /* positive = scroll down */
+
+        if (expanded) {
+            if (deltaY < -20 && window.scrollY <= 2) {
+                e.preventDefault();
+                expanded = false;
+                smoothCollapseBy(0.03);
+            }
+            return;
+        }
+
+        e.preventDefault();
+        /* Higher sensitivity scrolling back (negative deltaY) */
+        const factor = deltaY < 0 ? 0.0075 : 0.0045;
+        setProgress(progress + deltaY * factor);
+        if (progress >= 1) expanded = true;
+        touchStartY = currentY;
+    }
+
+    function handleTouchEnd() { touchStartY = 0; }
+
+    /* ── Smooth collapse animation ── */
+    function smoothCollapseBy(step) {
+        if (animFrameId) cancelAnimationFrame(animFrameId);
+        function tick() {
+            if (progress <= 0) { setProgress(0); return; }
+            setProgress(progress - step);
+            if (progress > 0) animFrameId = requestAnimationFrame(tick);
+        }
+        animFrameId = requestAnimationFrame(tick);
+    }
+
+    /* Register event listeners */
+    window.addEventListener('wheel',      handleWheel,      { passive: false });
+    window.addEventListener('touchstart', handleTouchStart, { passive: true  });
+    window.addEventListener('touchmove',  handleTouchMove,  { passive: false });
+    window.addEventListener('touchend',   handleTouchEnd);
+
+    /* Initial state */
+    setProgress(0);
+    if (scrollInd) scrollInd.style.opacity = '0';
+})();
+
+/* ── Hero Parallax (mouse only, active after expansion) ── */
 (function initHeroParallax() {
-    const bg      = document.getElementById('heroBg');
     const content = document.getElementById('heroContent');
     const hero    = document.getElementById('hero');
-    if (!bg || !content || !hero) return;
+    if (!content || !hero) return;
 
-    let scrollY = 0;
-    let mouseX  = 0, mouseY = 0;
+    let mouseX = 0, mouseY = 0;
     let targetMX = 0, targetMY = 0;
-
-    window.addEventListener('scroll', () => { scrollY = window.scrollY; }, { passive: true });
 
     hero.addEventListener('mousemove', e => {
         const cx = window.innerWidth  / 2;
@@ -134,13 +237,11 @@ window.addEventListener('load', () => {
     hero.addEventListener('mouseleave', () => { targetMX = 0; targetMY = 0; });
 
     (function raf() {
-        mouseX += (targetMX - mouseX) * .055;
-        mouseY += (targetMY - mouseY) * .055;
-        if (scrollY < window.innerHeight) {
-            bg.style.transform =
-                `scale(1.12) translate(${mouseX * -16}px, ${mouseY * -10}px) translateY(${scrollY * 0.25}px)`;
-            content.style.transform =
-                `translate(${mouseX * 8}px, ${mouseY * 5}px) translateY(${scrollY * -0.08}px)`;
+        mouseX += (targetMX - mouseX) * .06;
+        mouseY += (targetMY - mouseY) * .06;
+        /* Only apply when fully expanded and visible */
+        if (content.classList.contains('se-visible')) {
+            content.style.transform = `translate(${mouseX * 6}px, ${mouseY * 4}px)`;
         }
         requestAnimationFrame(raf);
     })();
@@ -166,12 +267,13 @@ window.addEventListener('load', () => {
             delay = 2400; isDeleting = true;
         } else if (isDeleting && charIdx === 0) {
             isDeleting = false;
-            phraseIdx = (phraseIdx + 1) % phrases.length;
-            delay = 450;
+            phraseIdx  = (phraseIdx + 1) % phrases.length;
+            delay = 400;
         }
         setTimeout(tick, delay);
     }
-    setTimeout(tick, 3200);
+    /* Start after preloader, runs regardless of expansion state */
+    setTimeout(tick, 2200);
 })();
 
 /* ── Magnetic Buttons ── */
@@ -242,4 +344,53 @@ window.addEventListener('load', () => {
         ).join(' ');
         el.classList.add('split-ready');
     });
+})();
+
+/* ── Text Scramble on Section Labels ── */
+(function initTextScramble() {
+    const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ·–·';
+
+    function scramble(el) {
+        const final = el.dataset.original || el.textContent.trim();
+        el.dataset.original = final;
+        let frame = 0;
+        const total = final.length * 1.5 + 10;
+
+        (function tick() {
+            el.textContent = final.split('').map((ch, i) => {
+                if (ch === ' ') return ' ';
+                if (frame > i * 1.4) return ch;
+                return CHARS[Math.floor(Math.random() * CHARS.length)];
+            }).join('');
+            frame++;
+            if (frame <= total) requestAnimationFrame(tick);
+            else el.textContent = final;
+        })();
+    }
+
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (!e.isIntersecting) return;
+            scramble(e.target);
+            obs.unobserve(e.target);
+        });
+    }, { threshold: 0.8 });
+
+    document.querySelectorAll('.section-label').forEach(el => obs.observe(el));
+})();
+
+/* ── About Image Scroll Parallax ── */
+(function initAboutParallax() {
+    const section = document.getElementById('ueber-uns');
+    const img = section ? section.querySelector('.about-img-main img') : null;
+    if (!section || !img) return;
+
+    img.style.transform = 'scale(1.12) translateY(0px)';
+
+    window.addEventListener('scroll', () => {
+        const rect   = section.getBoundingClientRect();
+        const progress = -rect.top / (window.innerHeight + rect.height);
+        const shift  = (progress - 0.5) * 60;
+        img.style.transform = `scale(1.12) translateY(${shift}px)`;
+    }, { passive: true });
 })();
