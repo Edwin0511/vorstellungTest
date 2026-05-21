@@ -4,6 +4,42 @@
    Before/After · Lightbox · Form · Dots
 ═══════════════════════════════════════════ */
 
+/* ── Marquee: fill screen with enough copies, then RAF scroll ── */
+(function initMarquee() {
+    const track    = document.querySelector('.usp-track');
+    const original = document.querySelector('.usp-items');
+    if (!track || !original) return;
+
+    /* Remove any pre-existing duplicates so we start clean */
+    while (track.children.length > 1) track.removeChild(track.lastChild);
+
+    const setW   = original.offsetWidth;
+    const stripW = (track.parentElement || document.body).offsetWidth;
+
+    /* Need enough copies so the track always covers the viewport */
+    const copies = Math.ceil(stripW / setW) + 2;
+    for (let i = 1; i < copies; i++) {
+        const clone = original.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        track.appendChild(clone);
+    }
+
+    let pos  = 0;
+    let last = null;
+    const speed = 40; /* px/s */
+
+    function tick(ts) {
+        if (last !== null) {
+            pos -= speed * (ts - last) / 1000;
+            if (pos <= -setW) pos += setW;
+            track.style.transform = 'translateX(' + pos + 'px)';
+        }
+        last = ts;
+        requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+})();
+
 /* ── Scroll Progress Bar ── */
 window.addEventListener('scroll', () => {
     const pct = window.scrollY / (document.documentElement.scrollHeight - innerHeight) * 100;
@@ -259,17 +295,72 @@ const lb = document.getElementById('lightbox');
 if (lb) lb.addEventListener('click', e => { if (e.target === lb) closeLightbox(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
-/* ── Contact Form ── */
-const form = document.getElementById('contactForm');
-if (form) {
-    form.addEventListener('submit', e => {
-        e.preventDefault();
-        const content = document.getElementById('formContent');
-        const success = document.getElementById('formSuccess');
-        if (content) content.style.display = 'none';
-        if (success) success.style.display = 'flex';
+/* ── Multi-Step Form ── */
+(function initMSF() {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+
+    const totalSteps  = 5;
+    let   currentStep = 1;
+
+    const progressFill = document.getElementById('msfProgress');
+    const backBtn      = document.getElementById('msfBack');
+    const nextBtn      = document.getElementById('msfNext');
+    const nav          = document.getElementById('msfNav');
+    const successEl    = document.getElementById('formSuccess');
+
+    function setStep(n) {
+        /* Hide all panels */
+        for (let i = 1; i <= totalSteps; i++) {
+            const p = document.getElementById('msfStep' + i);
+            if (p) p.classList.remove('active');
+            const dot = form.querySelector('.msf-step-dot[data-step="' + i + '"]');
+            if (dot) { dot.classList.remove('active', 'done'); if (i < n) dot.classList.add('done'); }
+        }
+        /* Show current panel */
+        const panel = document.getElementById('msfStep' + n);
+        if (panel) panel.classList.add('active');
+        const dot = form.querySelector('.msf-step-dot[data-step="' + n + '"]');
+        if (dot) dot.classList.add('active');
+
+        /* Progress bar */
+        if (progressFill) progressFill.style.width = (n / totalSteps * 100) + '%';
+
+        /* Back button */
+        if (backBtn) backBtn.classList.toggle('hidden', n === 1);
+
+        /* Next button label */
+        if (nextBtn) nextBtn.innerHTML = n === totalSteps
+            ? '<span>Anfrage absenden</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>'
+            : 'Weiter &#8594;';
+
+        currentStep = n;
+    }
+
+    if (nextBtn) nextBtn.addEventListener('click', () => {
+        if (currentStep < totalSteps) {
+            setStep(currentStep + 1);
+        } else {
+            /* Submit */
+            if (nav) nav.style.display = 'none';
+            for (let i = 1; i <= totalSteps; i++) {
+                const p = document.getElementById('msfStep' + i);
+                if (p) p.classList.remove('active');
+            }
+            form.querySelector('.msf-steps').style.display = 'none';
+            form.querySelector('.msf-progress-track').style.display = 'none';
+            const note = form.querySelector('.form-note');
+            if (note) note.style.display = 'none';
+            if (successEl) successEl.style.display = 'flex';
+        }
     });
-}
+
+    if (backBtn) backBtn.addEventListener('click', () => {
+        if (currentStep > 1) setStep(currentStep - 1);
+    });
+
+    setStep(1);
+})();
 
 /* ── Cookie Banner ── */
 const cookieBanner = document.getElementById('cookieBanner');

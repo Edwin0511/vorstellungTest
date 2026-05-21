@@ -126,7 +126,7 @@
 
         <!-- The expanding image card -->
         <div id="seMedia" class="se-media">
-            <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1400&q=90&auto=format&fit=crop" alt="Traumgarten" loading="eager">
+            <img src="https://images.unsplash.com/photo-1689419493601-08f2c11a1f66?w=1400&q=90&auto=format&fit=crop" alt="Traumgarten" loading="eager">
             <div id="seVeil" class="se-veil"></div>
             <div id="seHints" class="se-hints">
                 <span>Meisterbetrieb &middot; Seit 1998</span>
@@ -204,6 +204,8 @@
             <span>&#10022; Gartenbeleuchtung</span>
             <span>&#10022; Mähroboter-Systeme</span>
             <span>&#10022; Wintergärten</span>
+        </div>
+        <div class="usp-items" aria-hidden="true">
             <span>&#10022; Gartengestaltung</span>
             <span>&#10022; Terrassenbauten</span>
             <span>&#10022; Naturteiche &amp; Pools</span>
@@ -219,7 +221,13 @@
 <!-- ════════════════════════════════════
      LEISTUNGEN
 ════════════════════════════════════ -->
-<section id="leistungen" class="section-dark">
+<section id="leistungen" class="section-dark svc-animated">
+    <canvas id="servicesCanvas" aria-hidden="true"></canvas>
+    <div class="svc-blobs" aria-hidden="true">
+        <div class="svc-blob svc-blob-1"></div>
+        <div class="svc-blob svc-blob-2"></div>
+        <div class="svc-blob svc-blob-3"></div>
+    </div>
     <div class="container">
         <div class="section-header">
             <span class="section-label reveal">Was wir tun</span>
@@ -345,14 +353,14 @@
         <div class="about-grid">
             <div class="about-imagery">
                 <div class="about-img-main reveal-left">
-                    <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800&q=85&auto=format&fit=crop" alt="Gartenanlage" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1711098256574-7b497260cdc9?w=800&q=85&auto=format&fit=crop" alt="Gartenanlage" loading="lazy">
                     <div class="img-badge">
                         <strong>Meisterbetrieb</strong>
                         <span>Zertifiziert seit 1998</span>
                     </div>
                 </div>
                 <div class="about-img-secondary reveal-left" style="transition-delay:.15s">
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=85&auto=format&fit=crop" alt="Garten Detail" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1617576683096-00fc8eecb3af?w=600&q=85&auto=format&fit=crop" alt="Garten Detail" loading="lazy">
                 </div>
                 <div class="about-blob-1"></div>
                 <div class="about-blob-2"></div>
@@ -496,7 +504,7 @@
 
             <div class="portfolio-item large" data-category="garten">
                 <div class="portfolio-img">
-                    <img src="https://images.unsplash.com/photo-1560749003-f4b1e17e2dfd?w=900&q=85&auto=format&fit=crop" alt="Moderner Garten" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1691517534693-3b0956f236aa?w=900&q=85&auto=format&fit=crop" alt="Moderner Garten" loading="lazy">
                 </div>
                 <div class="portfolio-overlay">
                     <div class="portfolio-info">
@@ -512,7 +520,7 @@
 
             <div class="portfolio-item" data-category="terrasse">
                 <div class="portfolio-img">
-                    <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=700&q=85&auto=format&fit=crop" alt="Terrasse" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1637267283847-99de76bddeeb?w=700&q=85&auto=format&fit=crop" alt="Terrasse" loading="lazy">
                 </div>
                 <div class="portfolio-overlay">
                     <div class="portfolio-info">
@@ -528,7 +536,7 @@
 
             <div class="portfolio-item" data-category="wasser">
                 <div class="portfolio-img">
-                    <img src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?w=700&q=85&auto=format&fit=crop" alt="Naturteich" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1778500442258-c543960ce543?w=700&q=85&auto=format&fit=crop" alt="Naturteich" loading="lazy">
                 </div>
                 <div class="portfolio-overlay">
                     <div class="portfolio-info">
@@ -544,7 +552,7 @@
 
             <div class="portfolio-item" data-category="pflaster">
                 <div class="portfolio-img">
-                    <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=700&q=85&auto=format&fit=crop" alt="Pflaster" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1777370504743-c009e0d92465?w=700&q=85&auto=format&fit=crop" alt="Pflaster" loading="lazy">
                 </div>
                 <div class="portfolio-overlay">
                     <div class="portfolio-info">
@@ -560,7 +568,7 @@
 
             <div class="portfolio-item" data-category="garten">
                 <div class="portfolio-img">
-                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=700&q=85&auto=format&fit=crop" alt="Garten" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1622015663084-307d19eabbbf?w=700&q=85&auto=format&fit=crop" alt="Garten" loading="lazy">
                 </div>
                 <div class="portfolio-overlay">
                     <div class="portfolio-info">
@@ -610,11 +618,124 @@
 </section>
 
 <!-- ════════════════════════════════════
+     REFERENZ-PROJEKTE (Case Studies)
+════════════════════════════════════ -->
+<section id="referenzen" class="section-dark">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-label reveal">Erfolgsgeschichten</span>
+            <h2 class="section-title reveal">Unsere <em>Meisterwerke</em></h2>
+            <p class="section-sub reveal">Drei von über 500 realisierten Projekten — bewegt die Trennlinie um Vorher &amp; Nachher zu sehen.</p>
+        </div>
+
+        <div class="case-grid">
+
+            <!-- Card 1 -->
+            <article class="case-card reveal" data-delay="0">
+                <div class="case-preview">
+                    <div class="case-after"><img src="https://images.unsplash.com/photo-1661333587578-8ef88d297b1f?w=800&q=85&auto=format&fit=crop" alt="Garten nachher" loading="lazy"></div>
+                    <div class="case-before"><img src="https://images.unsplash.com/photo-1750235451778-bfc8b958be5c?w=800&q=85&auto=format&fit=crop" alt="Garten vorher" loading="lazy"></div>
+                    <div class="case-divider"></div>
+                    <span class="case-ba-label case-lbl-before">Vorher</span>
+                    <span class="case-ba-label case-lbl-after">Nachher</span>
+                    <div class="case-overlay-gradient"></div>
+                </div>
+                <div class="case-info">
+                    <div class="case-meta">
+                        <span class="case-meta-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>München, Bayern</span>
+                        <span class="case-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>4 Wochen</span>
+                    </div>
+                    <h3 class="case-title">Traumgarten mit Naturpool</h3>
+                    <p class="case-desc">800 m² komplett neugestaltet: Naturpool mit Biotop-Filtration, Schieferterrasse und mediterrane Bepflanzung.</p>
+                    <div class="case-tags">
+                        <span class="case-tag">Gartengestaltung</span>
+                        <span class="case-tag">Naturpool</span>
+                        <span class="case-tag">Pflaster</span>
+                    </div>
+                    <div class="case-footer">
+                        <div>
+                            <div class="case-value-label">Projektvolumen</div>
+                            <div class="case-value-amount">48.500 €</div>
+                        </div>
+                        <div class="case-stars">&#9733;&#9733;&#9733;&#9733;&#9733;<span>5,0</span></div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="case-card reveal" data-delay="0.12">
+                <div class="case-preview">
+                    <div class="case-after"><img src="https://images.unsplash.com/photo-1766491794639-0226ecdbdd9f?w=800&q=85&auto=format&fit=crop" alt="Terrasse nachher" loading="lazy"></div>
+                    <div class="case-before"><img src="https://images.unsplash.com/photo-1641329386289-6221bb37ebf8?w=800&q=85&auto=format&fit=crop" alt="Terrasse vorher" loading="lazy"></div>
+                    <div class="case-divider"></div>
+                    <span class="case-ba-label case-lbl-before">Vorher</span>
+                    <span class="case-ba-label case-lbl-after">Nachher</span>
+                    <div class="case-overlay-gradient"></div>
+                </div>
+                <div class="case-info">
+                    <div class="case-meta">
+                        <span class="case-meta-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Grünwald, Bayern</span>
+                        <span class="case-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>3 Wochen</span>
+                    </div>
+                    <h3 class="case-title">Exklusive Naturstein-Terrasse</h3>
+                    <p class="case-desc">280 m² Kalkstein-Terrasse mit integrierter Outdoor-Küche, Feuerplatz und automatischer Bewässerung.</p>
+                    <div class="case-tags">
+                        <span class="case-tag">Terrassenbau</span>
+                        <span class="case-tag">Naturstein</span>
+                        <span class="case-tag">Outdoor-Küche</span>
+                    </div>
+                    <div class="case-footer">
+                        <div>
+                            <div class="case-value-label">Projektvolumen</div>
+                            <div class="case-value-amount">34.200 €</div>
+                        </div>
+                        <div class="case-stars">&#9733;&#9733;&#9733;&#9733;&#9733;<span>5,0</span></div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="case-card reveal" data-delay="0.24">
+                <div class="case-preview">
+                    <div class="case-after"><img src="https://images.unsplash.com/photo-1705009448632-b4c66edb0310?w=800&q=85&auto=format&fit=crop" alt="Gartenanlage nachher" loading="lazy"></div>
+                    <div class="case-before"><img src="https://images.unsplash.com/photo-1598474138748-12594e1b59d5?w=800&q=85&auto=format&fit=crop" alt="Gartenanlage vorher" loading="lazy"></div>
+                    <div class="case-divider"></div>
+                    <span class="case-ba-label case-lbl-before">Vorher</span>
+                    <span class="case-ba-label case-lbl-after">Nachher</span>
+                    <div class="case-overlay-gradient"></div>
+                </div>
+                <div class="case-info">
+                    <div class="case-meta">
+                        <span class="case-meta-item"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Salzburg, Österreich</span>
+                        <span class="case-meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>6 Wochen</span>
+                    </div>
+                    <h3 class="case-title">Villagarten mit Naturteich</h3>
+                    <p class="case-desc">1.200 m² Repräsentationsgarten mit Schwimmteich, Rosenrondell, Granit-Einfahrt und Gartenbeleuchtung.</p>
+                    <div class="case-tags">
+                        <span class="case-tag">Komplettgestaltung</span>
+                        <span class="case-tag">Naturteich</span>
+                        <span class="case-tag">Beleuchtung</span>
+                    </div>
+                    <div class="case-footer">
+                        <div>
+                            <div class="case-value-label">Projektvolumen</div>
+                            <div class="case-value-amount">87.000 €</div>
+                        </div>
+                        <div class="case-stars">&#9733;&#9733;&#9733;&#9733;&#9733;<span>5,0</span></div>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- ════════════════════════════════════
      STATS
 ════════════════════════════════════ -->
 <section id="stats" class="section-dark section-stats">
     <div class="stats-bg">
-        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1920&q=70&auto=format&fit=crop" alt="" aria-hidden="true" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1729719022570-031be5c8605a?w=1920&q=70&auto=format&fit=crop" alt="" aria-hidden="true" loading="lazy">
         <div class="stats-overlay"></div>
     </div>
     <div class="container">
@@ -708,11 +829,11 @@
         <div class="ba-wrapper reveal">
             <div class="ba-container" id="baContainer">
                 <div class="ba-after">
-                    <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1200&q=85&auto=format&fit=crop" alt="Nachher">
+                    <img src="https://images.unsplash.com/photo-1723438095835-220f5a82bed4?w=1200&q=85&auto=format&fit=crop" alt="Nachher">
                     <span class="ba-label ba-label-right">Nachher</span>
                 </div>
                 <div class="ba-before" id="baBefore">
-                    <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&q=85&auto=format&fit=crop" alt="Vorher">
+                    <img src="https://images.unsplash.com/photo-1644185913848-55728a29d1b0?w=1200&q=85&auto=format&fit=crop" alt="Vorher">
                     <span class="ba-label ba-label-left">Vorher</span>
                 </div>
                 <div class="ba-handle" id="baHandle">
@@ -742,62 +863,102 @@
             <div class="testimonials-track" id="testimonialsTrack">
 
                 <div class="testimonial-card">
-                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="tc-header">
+                        <div class="tc-source">
+                            <svg class="tc-google-icon" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                            <span class="tc-source-name">Google</span>
+                            <span class="tc-verified"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Verifiziert</span>
+                        </div>
+                        <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;<span class="tc-rating">5,0</span></div>
+                    </div>
                     <p class="testimonial-text">&#8222;Grünwerk hat unseren verwilderten Garten in ein wahres Paradies verwandelt. Die Beratung war kompetent, der Ablauf reibungslos und das Ergebnis übertrifft alle Erwartungen. Absolut empfehlenswert!&#8220;</p>
+                    <div class="tc-badges">
+                        <span class="tc-badge tc-badge-location">&#128205; München</span>
+                        <span class="tc-badge tc-badge-type">Gartengestaltung</span>
+                    </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">MS</div>
-                        <div>
-                            <strong>Maria S.</strong>
-                            <span>München, Gartengestaltung 2024</span>
-                        </div>
+                        <div><strong>Maria S.</strong><span>Kundin seit 2024</span></div>
                     </div>
                 </div>
 
                 <div class="testimonial-card">
-                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="tc-header">
+                        <div class="tc-source">
+                            <svg class="tc-google-icon" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                            <span class="tc-source-name">Google</span>
+                            <span class="tc-verified"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Verifiziert</span>
+                        </div>
+                        <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;<span class="tc-rating">5,0</span></div>
+                    </div>
                     <p class="testimonial-text">&#8222;Die Terrasse ist einfach traumhaft geworden. Naturstein genau nach unseren Vorstellungen, pünktliche Fertigstellung und ein super freundliches Team. Danke Grünwerk!&#8220;</p>
+                    <div class="tc-badges">
+                        <span class="tc-badge tc-badge-location">&#128205; Grünwald</span>
+                        <span class="tc-badge tc-badge-type">Terrassenbau</span>
+                    </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">TK</div>
-                        <div>
-                            <strong>Thomas K.</strong>
-                            <span>Grünwald, Terrassenbau 2024</span>
-                        </div>
+                        <div><strong>Thomas K.</strong><span>Kunde seit 2024</span></div>
                     </div>
                 </div>
 
                 <div class="testimonial-card">
-                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="tc-header">
+                        <div class="tc-source">
+                            <svg class="tc-google-icon" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                            <span class="tc-source-name">Google</span>
+                            <span class="tc-verified"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Verifiziert</span>
+                        </div>
+                        <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;<span class="tc-rating">5,0</span></div>
+                    </div>
                     <p class="testimonial-text">&#8222;Unser Naturteich ist der Mittelpunkt unseres Gartens geworden. Grünwerk hat ein Ökosystem geschaffen, das sich selbst reguliert. Beeindruckend!&#8220;</p>
+                    <div class="tc-badges">
+                        <span class="tc-badge tc-badge-location">&#128205; Starnberg</span>
+                        <span class="tc-badge tc-badge-type">Naturteich</span>
+                    </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">AB</div>
-                        <div>
-                            <strong>Anna B.</strong>
-                            <span>Starnberg, Naturteich 2023</span>
-                        </div>
+                        <div><strong>Anna B.</strong><span>Kundin seit 2023</span></div>
                     </div>
                 </div>
 
                 <div class="testimonial-card">
-                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="tc-header">
+                        <div class="tc-source">
+                            <svg class="tc-google-icon" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                            <span class="tc-source-name">Google</span>
+                            <span class="tc-verified"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Verifiziert</span>
+                        </div>
+                        <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;<span class="tc-rating">5,0</span></div>
+                    </div>
                     <p class="testimonial-text">&#8222;Professionell, zuverlässig und kreativ. Das Pflaster-Design unserer Einfahrt ist heute ein Blickfang in der ganzen Straße. Jederzeit wieder!&#8220;</p>
+                    <div class="tc-badges">
+                        <span class="tc-badge tc-badge-location">&#128205; Rosenheim</span>
+                        <span class="tc-badge tc-badge-type">Pflasterarbeiten</span>
+                    </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">PW</div>
-                        <div>
-                            <strong>Peter W.</strong>
-                            <span>Rosenheim, Pflasterarbeiten 2023</span>
-                        </div>
+                        <div><strong>Peter W.</strong><span>Kunde seit 2023</span></div>
                     </div>
                 </div>
 
                 <div class="testimonial-card">
-                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="tc-header">
+                        <div class="tc-source">
+                            <svg class="tc-google-icon" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                            <span class="tc-source-name">Google</span>
+                            <span class="tc-verified"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Verifiziert</span>
+                        </div>
+                        <div class="tc-stars">&#9733;&#9733;&#9733;&#9733;&#9733;<span class="tc-rating">5,0</span></div>
+                    </div>
                     <p class="testimonial-text">&#8222;Von der ersten Beratung bis zur Übergabe war alles perfekt. Das Team ist unglaublich detailverliebt und hat genau verstanden, was wir uns vorgestellt haben. 100% Weiterempfehlung!&#8220;</p>
+                    <div class="tc-badges">
+                        <span class="tc-badge tc-badge-location">&#128205; München</span>
+                        <span class="tc-badge tc-badge-type">Komplettgestaltung</span>
+                    </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">SR</div>
-                        <div>
-                            <strong>Sabine R.</strong>
-                            <span>München, Komplettgestaltung 2024</span>
-                        </div>
+                        <div><strong>Sabine R.</strong><span>Kundin seit 2024</span></div>
                     </div>
                 </div>
 
@@ -896,55 +1057,139 @@
             </div>
 
             <div class="contact-form-wrap reveal">
-                <form id="contactForm" class="contact-form glass-card">
-                    <div id="formContent">
-                        <h3>Projekt anfragen</h3>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="fname">Vorname *</label>
-                                <input type="text" id="fname" name="fname" placeholder="Max" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="lname">Nachname *</label>
-                                <input type="text" id="lname" name="lname" placeholder="Mustermann" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">E-Mail *</label>
-                            <input type="email" id="email" name="email" placeholder="max@beispiel.de" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Telefon</label>
-                            <input type="tel" id="phone" name="phone" placeholder="+49 89 ...">
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Gewünschte Leistung</label>
-                            <select id="service" name="service">
-                                <option value="">Bitte wählen...</option>
-                                <option>Gartengestaltung</option>
-                                <option>Terrassenbau</option>
-                                <option>Naturteich / Pool</option>
-                                <option>Pflasterarbeiten</option>
-                                <option>Baumpflege</option>
-                                <option>Gartenbeleuchtung</option>
-                                <option>Sonstiges</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Ihr Projekt *</label>
-                            <textarea id="message" name="message" rows="4" placeholder="Beschreiben Sie kurz Ihr Vorhaben..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn-submit btn-magnetic">
-                            <span>Anfrage senden</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
-                        </button>
-                        <p class="form-note">* Pflichtfeld &middot; Ihre Daten werden nicht weitergegeben.</p>
+                <form id="contactForm" class="contact-form msf-form glass-card">
+
+                    <!-- Progress bar -->
+                    <div class="msf-progress-track">
+                        <div class="msf-progress-fill" id="msfProgress"></div>
                     </div>
+
+                    <!-- Step indicators -->
+                    <div class="msf-steps">
+                        <div class="msf-step-dot active" data-step="1"><span>1</span><em>Leistung</em></div>
+                        <div class="msf-connector"></div>
+                        <div class="msf-step-dot" data-step="2"><span>2</span><em>Größe</em></div>
+                        <div class="msf-connector"></div>
+                        <div class="msf-step-dot" data-step="3"><span>3</span><em>Budget</em></div>
+                        <div class="msf-connector"></div>
+                        <div class="msf-step-dot" data-step="4"><span>4</span><em>Zeitraum</em></div>
+                        <div class="msf-connector"></div>
+                        <div class="msf-step-dot" data-step="5"><span>5</span><em>Kontakt</em></div>
+                    </div>
+
+                    <!-- Step 1: Service -->
+                    <div class="msf-panel active" id="msfStep1">
+                        <h3 class="msf-title">Welche Leistung wünschen Sie?</h3>
+                        <p class="msf-sub">Wählen Sie Ihren Schwerpunkt — Mehrfachauswahl möglich.</p>
+                        <div class="msf-options-grid">
+                            <label class="msf-option-card">
+                                <input type="checkbox" name="service" value="gartengestaltung">
+                                <div class="msf-card-inner">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22V12m0 0C12 7 7 4 3 6m9 6c0-5 5-8 9-6"/></svg>
+                                    <span>Gartengestaltung</span>
+                                </div>
+                            </label>
+                            <label class="msf-option-card">
+                                <input type="checkbox" name="service" value="terrassenbau">
+                                <div class="msf-card-inner">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="13" width="18" height="8" rx="1"/><path d="M3 13l4-8h10l4 8"/></svg>
+                                    <span>Terrassenbau</span>
+                                </div>
+                            </label>
+                            <label class="msf-option-card">
+                                <input type="checkbox" name="service" value="naturteich">
+                                <div class="msf-card-inner">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                                    <span>Naturteich / Pool</span>
+                                </div>
+                            </label>
+                            <label class="msf-option-card">
+                                <input type="checkbox" name="service" value="pflaster">
+                                <div class="msf-card-inner">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="9" height="9" rx="1"/><rect x="13" y="2" width="9" height="9" rx="1"/><rect x="2" y="13" width="9" height="9" rx="1"/><rect x="13" y="13" width="9" height="9" rx="1"/></svg>
+                                    <span>Pflasterarbeiten</span>
+                                </div>
+                            </label>
+                            <label class="msf-option-card">
+                                <input type="checkbox" name="service" value="beleuchtung">
+                                <div class="msf-card-inner">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+                                    <span>Gartenbeleuchtung</span>
+                                </div>
+                            </label>
+                            <label class="msf-option-card">
+                                <input type="checkbox" name="service" value="sonstiges">
+                                <div class="msf-card-inner">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                                    <span>Sonstiges</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Garden size -->
+                    <div class="msf-panel" id="msfStep2">
+                        <h3 class="msf-title">Wie groß ist Ihre Gartenfläche?</h3>
+                        <p class="msf-sub">Eine grobe Schätzung reicht für die erste Kalkulation.</p>
+                        <div class="msf-options-list">
+                            <label class="msf-radio-card"><input type="radio" name="size" value="unter100"><span class="msf-radio-inner"><strong>Unter 100 m²</strong><em>Kleingarten / Stadtgarten</em></span></label>
+                            <label class="msf-radio-card"><input type="radio" name="size" value="100-300"><span class="msf-radio-inner"><strong>100 – 300 m²</strong><em>Mittelgroßer Hausgarten</em></span></label>
+                            <label class="msf-radio-card"><input type="radio" name="size" value="300-600"><span class="msf-radio-inner"><strong>300 – 600 m²</strong><em>Großer Privatgarten</em></span></label>
+                            <label class="msf-radio-card"><input type="radio" name="size" value="ueber600"><span class="msf-radio-inner"><strong>Über 600 m²</strong><em>Parkanlage / Villagarten</em></span></label>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Budget -->
+                    <div class="msf-panel" id="msfStep3">
+                        <h3 class="msf-title">Was ist Ihr ungefähres Budget?</h3>
+                        <p class="msf-sub">Vertraulich — hilft uns, die passende Lösung zu finden.</p>
+                        <div class="msf-options-list">
+                            <label class="msf-radio-card"><input type="radio" name="budget" value="5-15k"><span class="msf-radio-inner"><strong>5.000 – 15.000 €</strong><em>Teilbereiche / Einzelmaßnahmen</em></span></label>
+                            <label class="msf-radio-card"><input type="radio" name="budget" value="15-30k"><span class="msf-radio-inner"><strong>15.000 – 30.000 €</strong><em>Umfangreichere Projekte</em></span></label>
+                            <label class="msf-radio-card"><input type="radio" name="budget" value="30-60k"><span class="msf-radio-inner"><strong>30.000 – 60.000 €</strong><em>Komplettgestaltung</em></span></label>
+                            <label class="msf-radio-card"><input type="radio" name="budget" value="60k+"><span class="msf-radio-inner"><strong>Über 60.000 €</strong><em>Exklusive Gesamtanlage</em></span></label>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Timeline -->
+                    <div class="msf-panel" id="msfStep4">
+                        <h3 class="msf-title">Wann soll es losgehen?</h3>
+                        <p class="msf-sub">Wir planen frühzeitig — sichern Sie sich Ihren Wunschtermin.</p>
+                        <div class="msf-options-list">
+                            <label class="msf-radio-card"><input type="radio" name="timeline" value="sofort"><span class="msf-radio-inner"><strong>So schnell wie möglich</strong><em>Innerhalb der nächsten 4 Wochen</em></span></label>
+                            <label class="msf-radio-card"><input type="radio" name="timeline" value="1-3monate"><span class="msf-radio-inner"><strong>In 1–3 Monaten</strong><em>Zeit für Planung und Vorbereitung</em></span></label>
+                            <label class="msf-radio-card"><input type="radio" name="timeline" value="fruehling"><span class="msf-radio-inner"><strong>Zum Frühling</strong><em>Optimale Jahreszeit für Pflanzarbeiten</em></span></label>
+                            <label class="msf-radio-card"><input type="radio" name="timeline" value="flexibel"><span class="msf-radio-inner"><strong>Flexibel</strong><em>Termin nach Absprache</em></span></label>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: Contact -->
+                    <div class="msf-panel" id="msfStep5">
+                        <h3 class="msf-title">Wie erreichen wir Sie?</h3>
+                        <p class="msf-sub">Wir melden uns innerhalb von 24 Stunden mit einem Angebot.</p>
+                        <div class="form-row">
+                            <div class="form-group"><label>Vorname *</label><input type="text" name="fname" placeholder="Max" required></div>
+                            <div class="form-group"><label>Nachname *</label><input type="text" name="lname" placeholder="Mustermann" required></div>
+                        </div>
+                        <div class="form-group"><label>Telefon *</label><input type="tel" name="phone" placeholder="+49 89 ..." required></div>
+                        <div class="form-group"><label>E-Mail *</label><input type="email" name="email" placeholder="max@beispiel.de" required></div>
+                        <div class="form-group"><label>Wohnort / PLZ</label><input type="text" name="location" placeholder="München / 80331"></div>
+                    </div>
+
+                    <!-- Navigation -->
+                    <div class="msf-nav" id="msfNav">
+                        <button type="button" class="msf-btn-back" id="msfBack">&#8592; Zurück</button>
+                        <button type="button" class="msf-btn-next btn-primary" id="msfNext">Weiter &#8594;</button>
+                    </div>
+
+                    <!-- Success -->
                     <div id="formSuccess" class="form-success" style="display:none">
                         <div class="success-icon">&#10003;</div>
                         <h3>Vielen Dank!</h3>
-                        <p>Ihre Anfrage wurde erfolgreich gesendet. Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
+                        <p>Ihre Anfrage ist angekommen. Wir melden uns innerhalb von 24 Stunden mit einem unverbindlichen Angebot.</p>
                     </div>
+
+                    <p class="form-note">* Pflichtfeld &middot; Ihre Daten werden vertraulich behandelt.</p>
                 </form>
             </div>
         </div>

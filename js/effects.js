@@ -334,6 +334,170 @@ window.addEventListener('load', () => {
     });
 })();
 
+/* ════════════════════════════════════════
+   SERVICES ANIMATED BACKGROUND
+   Ported from 21st.dev BeamsBackground
+   — canvas beams + leaf particles + cursor
+════════════════════════════════════════ */
+(function initServicesCanvas() {
+    const canvas  = document.getElementById('servicesCanvas');
+    const section = document.getElementById('leistungen');
+    if (!canvas || !section) return;
+
+    const ctx = canvas.getContext('2d');
+    let W = 0, H = 0;
+    let beams = [], leaves = [];
+    let mouseX = -2000, mouseY = -2000;
+    let raf;
+
+    /* ── Color palette ── */
+    const COLORS = [
+        [45,  122,  64],   /* primary green */
+        [26,   92,  46],   /* dark green */
+        [201, 168,  76],   /* gold */
+        [80,  160,  90],   /* light green */
+        [160, 130,  55],   /* dark gold */
+    ];
+
+    /* ── Beam factory (BeamsBackground pattern) ── */
+    function makeBeam() {
+        const col   = Math.floor(Math.random() * 3);
+        const xZone = W / 3;
+        return {
+            x:         col * xZone + xZone / 2 + (Math.random() - .5) * xZone * .9,
+            y:         H + 80 + Math.random() * 400,
+            width:     25 + Math.random() * 65,
+            length:    H * 3,
+            angle:     -32 + Math.random() * 14,
+            speed:     0.25 + Math.random() * 0.55,
+            opacity:   0.07 + Math.random() * 0.09,
+            color:     COLORS[Math.floor(Math.random() * COLORS.length)],
+            pulse:     Math.random() * Math.PI * 2,
+            pulseSpd:  0.012 + Math.random() * 0.018,
+            col,
+        };
+    }
+
+    /* ── Leaf particle factory ── */
+    function makeLeaf(randY) {
+        return {
+            x:       Math.random() * W,
+            y:       randY !== undefined ? Math.random() * H : H + 12,
+            size:    3.5 + Math.random() * 6,
+            angle:   Math.random() * Math.PI * 2,
+            rotSpd:  (Math.random() - .5) * 0.025,
+            vx:      (Math.random() - .5) * 0.35,
+            vy:      -(0.35 + Math.random() * 0.65),
+            opacity: 0.12 + Math.random() * 0.2,
+            sway:    Math.random() * Math.PI * 2,
+            swaySpd: 0.018 + Math.random() * 0.022,
+        };
+    }
+
+    /* ── Draw one beam ── */
+    function drawBeam(b) {
+        ctx.save();
+        ctx.translate(b.x, b.y);
+        ctx.rotate(b.angle * Math.PI / 180);
+        const op = b.opacity * (.75 + Math.sin(b.pulse) * .25);
+        const [r, g, bl] = b.color;
+        const gr = ctx.createLinearGradient(0, 0, 0, b.length);
+        gr.addColorStop(0,    `rgba(${r},${g},${bl},0)`);
+        gr.addColorStop(0.08, `rgba(${r},${g},${bl},${op * .45})`);
+        gr.addColorStop(0.38, `rgba(${r},${g},${bl},${op})`);
+        gr.addColorStop(0.62, `rgba(${r},${g},${bl},${op})`);
+        gr.addColorStop(0.92, `rgba(${r},${g},${bl},${op * .45})`);
+        gr.addColorStop(1,    `rgba(${r},${g},${bl},0)`);
+        ctx.fillStyle = gr;
+        ctx.fillRect(-b.width / 2, 0, b.width, b.length);
+        ctx.restore();
+    }
+
+    /* ── Draw one leaf (pointed oval — organic leaf path) ── */
+    function drawLeaf(l) {
+        ctx.save();
+        ctx.translate(l.x, l.y);
+        ctx.rotate(l.angle);
+        ctx.globalAlpha = l.opacity;
+        ctx.beginPath();
+        ctx.moveTo(0, -l.size);
+        ctx.bezierCurveTo(l.size * .55, -l.size * .5, l.size * .55, l.size * .5, 0, l.size);
+        ctx.bezierCurveTo(-l.size * .55, l.size * .5, -l.size * .55, -l.size * .5, 0, -l.size);
+        ctx.fillStyle = 'rgba(60,140,70,.75)';
+        ctx.fill();
+        /* Midrib */
+        ctx.beginPath();
+        ctx.moveTo(0, -l.size * .85);
+        ctx.lineTo(0,  l.size * .85);
+        ctx.strokeStyle = 'rgba(100,180,100,.4)';
+        ctx.lineWidth = 0.6;
+        ctx.stroke();
+        ctx.restore();
+    }
+
+    /* ── Resize & init ── */
+    function resize() {
+        cancelAnimationFrame(raf);
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        W = section.offsetWidth;
+        H = section.offsetHeight;
+        canvas.width  = W * dpr;
+        canvas.height = H * dpr;
+        canvas.style.width  = W + 'px';
+        canvas.style.height = H + 'px';
+        ctx.scale(dpr, dpr);
+        beams  = Array.from({ length: 22 }, makeBeam);
+        leaves = Array.from({ length: 30 }, () => makeLeaf(true));
+        animate();
+    }
+
+    /* ── Main animation loop ── */
+    function animate() {
+        ctx.clearRect(0, 0, W, H);
+
+        /* Beams — blurred layer (BeamsBackground core) */
+        ctx.save();
+        ctx.filter = 'blur(32px)';
+        beams.forEach((b, i) => {
+            b.y      -= b.speed;
+            b.pulse  += b.pulseSpd;
+            /* Gentle cursor attraction */
+            b.x += (mouseX - b.x) * 0.00025;
+            /* Reset when fully off-screen top */
+            if (b.y + b.length < -50) {
+                const fresh = makeBeam();
+                fresh.col = i % 3;
+                beams[i] = fresh;
+            }
+            drawBeam(b);
+        });
+        ctx.restore();
+
+        /* Leaf particles — crisp layer */
+        leaves.forEach((l, i) => {
+            l.y      += l.vy;
+            l.x      += l.vx + Math.sin(l.sway) * 0.28;
+            l.angle  += l.rotSpd;
+            l.sway   += l.swaySpd;
+            if (l.y < -15) leaves[i] = makeLeaf(false);
+            drawLeaf(l);
+        });
+
+        raf = requestAnimationFrame(animate);
+    }
+
+    /* ── Mouse tracking ── */
+    section.addEventListener('mousemove', e => {
+        const r = section.getBoundingClientRect();
+        mouseX = e.clientX - r.left;
+        mouseY = e.clientY - r.top;
+    });
+    section.addEventListener('mouseleave', () => { mouseX = -2000; mouseY = -2000; });
+
+    resize();
+    window.addEventListener('resize', resize);
+})();
+
 /* ── Split Text (word-by-word reveal) ── */
 (function initSplitText() {
     document.querySelectorAll('.section-title').forEach(el => {
